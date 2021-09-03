@@ -1,0 +1,33 @@
+.header {
+  position: absolute;
+  width: 100%;
+  padding: 2rem 5rem;
+  height: 8rem;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+.header ul li {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  line-height: 2;
+}
+.logo img {
+  width: 12rem;
+}
+.right {
+  display: flex;
+}
+.right li img {
+  fill: white !important;
+  width: 2rem;
+}
