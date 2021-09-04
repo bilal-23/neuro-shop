@@ -1,0 +1,47 @@
+.card {
+  height: 300px;
+  max-width: 400px;
+  padding: 40px 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.top img {
+  width: 3rem;
+}
+.mid {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.bottom {
+  margin-top: 1rem;
+}
+.bottom a {
+  color: black;
+  background: white;
+  font-size: 1.5rem;
+  padding: 0.7rem 5rem;
+  line-height: 1;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.bottom a:hover {
+  color: white;
+  background-color: black;
+}
+.card1 {
+  background: rgb(0, 84, 102);
+  color: rgb(246, 249, 229);
+}
+.card2 {
+  background-color: rgb(247, 216, 191);
+  color: rgb(196, 123, 89);
+}
+.card3 {
+  background-color: rgb(241, 250, 246);
+  color: rgb(100, 186, 161);
+}
