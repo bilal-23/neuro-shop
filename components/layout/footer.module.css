@@ -7,6 +7,7 @@
   align-items: center;
   color: white !important;
   font-size: 1.5rem;
+  padding-bottom: 2rem;
 }
 .footer_content {
   width: 70%;
@@ -125,7 +126,7 @@
   .footer {
     padding-left: 4rem;
     padding-right: 4rem;
-    height: 50vh;
+    height: auto;
   }
   .footer_content {
     flex-direction: column-reverse;

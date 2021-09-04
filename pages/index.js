@@ -1,7 +1,6 @@
 import HeroSection from "../components/homepage/hero-section";
 import ZoneSection from "../components/homepage/zone-section";
 import ShopSection from "../components/homepage/shop-section";
-import FootBanner from "../components/homepage/foot-banner";
 
 export default function Home() {
   return (
