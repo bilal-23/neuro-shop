@@ -1,7 +1,12 @@
+.top {
+  background: url("/images/home/hero-banner.jpg") no-repeat;
+}
+.foot {
+  background: url("/images/home/footer-banner.jpg") no-repeat;
+}
 .hero {
   height: 100vh;
-  background: url("/images/home/hero-banner.jpg") no-repeat;
-  background-position: cover;
+  background-position: center;
   background-size: cover;
   padding: 10rem 10rem;
 }
@@ -16,4 +21,45 @@
 .hero_content p {
   padding: 2rem 0;
   font-weight: 600;
+}
+
+@media only screen and (max-width: 900px) {
+  .hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero_content {
+    margin-top: 10rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .hero {
+    background-position: right;
+    padding: 5rem 5rem;
+    padding-top: 10rem;
+  }
+  .top {
+    background-image: url("/images/home/hero-banner-mobile.jpg");
+    background-repeat: no-repeat;
+  }
+  .hero_content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10rem auto;
+  }
+  .hero_content h1 {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  .hero_content p {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .foot {
+    background-image: url("/images/home/footer-banner-mobile.jpg");
+    background-repeat: no-repeat;
+  }
 }

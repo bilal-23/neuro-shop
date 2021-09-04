@@ -1,0 +1,11 @@
+.product {
+  height: 130vh;
+  padding: 10rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+.product1 {
+  background-color: rgb(0, 84, 102);
+}

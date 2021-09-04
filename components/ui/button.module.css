@@ -1,6 +1,6 @@
 .button {
   padding: 2rem 5rem;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   font-size: 1.5rem;
   letter-spacing: 0.3rem;
@@ -11,4 +11,9 @@
   border: none;
   outline: none;
   cursor: pointer;
+  transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.button:hover {
+  color: black;
+  background-color: #fff;
 }
