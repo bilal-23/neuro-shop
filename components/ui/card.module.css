@@ -1,7 +1,7 @@
 .card {
-  height: 300px;
-  max-width: 400px;
-  padding: 40px 70px;
+  height: 30rem;
+  max-width: 40rem;
+  padding: 4rem 7rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
   gap: 3rem;
 }
 .top img {
-  width: 3rem;
+  width: 5rem;
 }
 .mid {
   font-size: 2rem;
@@ -44,4 +44,10 @@
 .card3 {
   background-color: rgb(241, 250, 246);
   color: rgb(100, 186, 161);
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    min-width: 90%;
+  }
 }

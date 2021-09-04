@@ -125,7 +125,7 @@
   .footer {
     padding-left: 4rem;
     padding-right: 4rem;
-    height: 70vh;
+    height: 50vh;
   }
   .footer_content {
     flex-direction: column-reverse;

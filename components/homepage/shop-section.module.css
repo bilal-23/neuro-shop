@@ -35,6 +35,16 @@
 .cards {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 3rem 0;
   gap: 3rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .section {
+    padding: 5rem;
+  }
+  .cards {
+    flex-direction: column;
+  }
 }
