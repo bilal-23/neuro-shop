@@ -1,14 +1,18 @@
 .header {
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   padding: 2rem 5rem;
   height: 8rem;
-  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s ease;
+  color: white;
+  background: transparent;
 }
+
 .header ul {
   list-style: none;
   display: flex;

@@ -3,4 +3,17 @@
   background: url("/images/home/hero-banner.jpg") no-repeat;
   background-position: cover;
   background-size: cover;
+  padding: 10rem 10rem;
+}
+.hero_content {
+  margin-top: 5rem;
+  max-width: 35rem;
+}
+.hero_content h1 {
+  font-weight: 600;
+  padding: 2rem 0;
+}
+.hero_content p {
+  padding: 2rem 0;
+  font-weight: 600;
 }

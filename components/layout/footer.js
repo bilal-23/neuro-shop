@@ -8,7 +8,7 @@ function Footer() {
             <div className={classes.footer_content}>
                 <div className={classes.left}>
                     <div className={classes.address}>
-                        <img src="./assets/footer_logo.svg" alt="logo" />
+                        <img src="./assets/WhiteLogo.svg" alt="logo" />
                         <address>
                             <span>
                                 Los Angeles, CA 90013

@@ -1,0 +1,14 @@
+.button {
+  padding: 2rem 5rem;
+  width: 90%;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: #000;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
