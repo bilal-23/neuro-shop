@@ -1,8 +1,11 @@
+import { useRouter } from 'next/router';
 import classes from './header.module.css';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useState, useEffect } from 'react';
 function Header() {
     const [transparent, setTransparent] = useState(true);
+    const router = useRouter();
+    const isHomePage = router.pathname === '/'
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
@@ -16,10 +19,16 @@ function Header() {
     }, []);
 
     return (
-        <header className={classes.header} style={{ backgroundColor: !transparent && 'white', color: !transparent && 'black' }}>
+        <header className={classes.header} style={
+            {
+                backgroundColor: isHomePage && !transparent && 'white',
+                color: isHomePage && !transparent && 'black'
+            }
+        }>
             <div className={classes.logo}>
-                {!transparent && <img src="./assets/BlackLogo.svg" alt="logo" />}
-                {transparent && <img src="./assets/WhiteLogo.svg" alt="logo" />}
+                {isHomePage && !transparent && <img src="./assets/BlackLogo.svg" alt="logo" />}
+                {isHomePage && transparent && <img src="./assets/WhiteLogo.svg" alt="logo" />}
+                {!isHomePage && <img src="./assets/BlackLogo.svg" alt="logo" />}
             </div>
             <div className={classes.right}>
                 <ul>
@@ -32,7 +41,7 @@ function Header() {
                     </li>
                 </ul>
             </div>
-        </header>
+        </header >
     )
 }
 export default Header;

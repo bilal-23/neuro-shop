@@ -3,7 +3,7 @@ import Button from '../ui/button';
 
 function HeroSection(props) {
     const { pos } = props;
-    console.log(pos)
+    //pos determines whether it is top banner or the one above footer.
     return (
         <section className={`${classes.hero} ${classes[pos]} `}>
             <div className={classes.hero_content}>

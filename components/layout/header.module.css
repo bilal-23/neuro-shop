@@ -9,8 +9,7 @@
   justify-content: space-between;
   align-items: center;
   transition: all 0.5s ease;
-  color: white;
-  background: transparent;
+  color: black;
 }
 
 .header ul {
