@@ -1,8 +1,11 @@
-function AllProducts() {
+import AllProducts from '../../components/allProductsPage/all-products';
+import ProductsGrid from '../../components/allProductsPage/products-grid';
+
+function AllProductsPage() {
     return (
         <>
-            <h1>Hey</h1>
+            <AllProducts />
         </>
     )
 }
-export default AllProducts;
+export default AllProductsPage;

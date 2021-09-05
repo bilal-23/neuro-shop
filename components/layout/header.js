@@ -22,7 +22,8 @@ function Header() {
         <header className={classes.header} style={
             {
                 backgroundColor: isHomePage && !transparent && 'white',
-                color: isHomePage && !transparent && 'black'
+                color: isHomePage && !transparent && 'black',
+                backgroundColor: !isHomePage && 'white'
             }
         }>
             <div className={classes.logo}>
