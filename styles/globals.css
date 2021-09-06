@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Raleway:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 *,
 *:after,
@@ -30,6 +32,8 @@ h5 {
 }
 p {
   font-size: 2rem;
+  font-weight: 600;
+  word-spacing: 3px;
 }
 @media only screen and (max-width: 900px) {
   html {

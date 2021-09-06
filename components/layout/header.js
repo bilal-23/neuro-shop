@@ -29,7 +29,7 @@ function Header() {
             <div className={classes.logo}>
                 {isHomePage && !transparent && <img src="./assets/BlackLogo.svg" alt="logo" />}
                 {isHomePage && transparent && <img src="./assets/WhiteLogo.svg" alt="logo" />}
-                {!isHomePage && <img src="./assets/BlackLogo.svg" alt="logo" />}
+                {!isHomePage && <img src="../assets/BlackLogo.svg" alt="logo" />}
             </div>
             <div className={classes.right}>
                 <ul>

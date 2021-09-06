@@ -1,0 +1,109 @@
+.section {
+  padding: 10rem 5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  margin: 0 auto;
+}
+.product_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product_image img {
+  width: 50%;
+}
+.product_detail {
+  padding: 2rem 5rem;
+  color: black;
+}
+.product_detail_heading {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.product_detail_rating {
+  display: flex;
+  align-items: baseline;
+}
+.product_detail_rating span {
+  font-size: 1.5rem;
+  color: rgb(142, 142, 142);
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.product_detail_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.product_detail_about {
+  font-size: 1.3rem;
+  color: rgb(142, 142, 142);
+}
+.product_detail_description {
+  font-size: 1.4rem;
+}
+.product_detail_flavor {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+.product_detail_flavor span {
+  font-size: 1.3rem;
+  color: rgb(142, 142, 142);
+}
+.product_detail_size {
+  font-size: 1.5rem;
+}
+.product_detail_size span {
+  font-size: 1.3rem;
+  color: rgb(142, 142, 142);
+}
+.product_detail_features {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.product_detail_feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.product_detail_feature_text p:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.product_detail_feature_text p:last-child {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.product_buy {
+  padding: 2rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .section {
+    padding: 10rem 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+  .product_image img {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .section {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .product_image {
+    background-color: rgba(131, 131, 131, 0.1);
+  }
+  .product_detail {
+    padding: 2rem 2rem;
+    color: black;
+  }
+}
