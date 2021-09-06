@@ -14,9 +14,7 @@ function HeroSection(props) {
                 </div>
                 <div className={classes.hero_content_cta}>
                     <Link href="/products">
-                        <a href="/products">
-                            <Button>{props.btnText}</Button>
-                        </a>
+                        <a> <Button>{props.btnText}</Button></a>
                     </Link>
                 </div>
             </div>
