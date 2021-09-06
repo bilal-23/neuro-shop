@@ -11,7 +11,9 @@ function ProductGridItem(props) {
                     <img src={`./images/allproducts/${image1}`} alt="" />
                     <p>{flavour}</p>
                     <Link href={`/products/${link1}`}>
-                        <ButtonSecondary link={`/products/${link1}`}>Shop Now</ButtonSecondary>
+                        <a>
+                            <ButtonSecondary>Shop Now</ButtonSecondary>
+                        </a>
                     </Link>
                 </div>}
                 {image2 && <div className={classes.item_image}>
@@ -19,7 +21,9 @@ function ProductGridItem(props) {
                     <img src={`./images/allproducts/${image2}`} alt="" />
                     <p>{flavour}</p>
                     <Link href={`/products/${link2}`}>
-                        <ButtonSecondary link={`/products/${link1}`}>Shop Now</ButtonSecondary>
+                        <a>
+                            <ButtonSecondary link={`/products/${link1}`}>Shop Now</ButtonSecondary>
+                        </a>
                     </Link>
                 </div>}
             </div>
