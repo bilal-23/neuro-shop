@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import classes from './header.module.css';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 function Header() {
     const [transparent, setTransparent] = useState(true);
     const router = useRouter();
@@ -27,9 +28,9 @@ function Header() {
             }
         }>
             <div className={classes.logo}>
-                {isHomePage && !transparent && <img src="./assets/BlackLogo.svg" alt="logo" />}
-                {isHomePage && transparent && <img src="./assets/WhiteLogo.svg" alt="logo" />}
-                {!isHomePage && <img src="../assets/BlackLogo.svg" alt="logo" />}
+                {isHomePage && !transparent && <Link href="/"><img src="./assets/BlackLogo.svg" alt="logo" /></Link>}
+                {isHomePage && transparent && <Link href="/"><img src="./assets/WhiteLogo.svg" alt="logo" /></Link>}
+                {!isHomePage && <Link href="/"><img src="../assets/BlackLogo.svg" alt="logo" /></Link>}
             </div>
             <div className={classes.right}>
                 <ul>

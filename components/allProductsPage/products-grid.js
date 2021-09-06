@@ -13,6 +13,8 @@ function ProductsGrid() {
                 productName1="Gum"
                 productName2="Mint"
                 flavour="Peppermint"
+                link1="gum-peppermint"
+                link2="mint-peppermint"
                 reverse={false} />
             <ProductGridItem
                 heading="Calm & Clarity"
@@ -21,6 +23,7 @@ function ProductsGrid() {
                 image1="ginger-chai.png"
                 productName1="Mints"
                 flavour="Ginger Chai"
+                link1="mint-ginger-chai"
                 reverse={true} />
             <ProductGridItem
                 heading="The Ideal State"
@@ -29,6 +32,7 @@ function ProductsGrid() {
                 image1="both.png"
                 productName1="MINTS"
                 flavour="Peppermint & Ginger Chai"
+                link1="mint-peppermint-ginger-chai"
                 reverse={false} />
         </div>
     )

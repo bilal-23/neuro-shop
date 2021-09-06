@@ -1,7 +1,8 @@
 import ButtonSecondary from '../ui/Button-secondary'
 import classes from './product-gird-item.module.css'
+import Link from 'next/link';
 function ProductGridItem(props) {
-    const { reverse, heading, text, cardId, image1, image2, productName1, productName2, flavour } = props;
+    const { reverse, heading, text, cardId, image1, image2, productName1, productName2, flavour, link1, link2 } = props;
     return (
         <div className={`${classes.item} ${reverse && classes['reverse']}`}>
             <div className={classes.item_images}>
@@ -9,13 +10,17 @@ function ProductGridItem(props) {
                     <h3>{productName1}</h3>
                     <img src={`./images/allproducts/${image1}`} alt="" />
                     <p>{flavour}</p>
-                    <ButtonSecondary>Shop Now</ButtonSecondary>
+                    <Link href={`/products/${link1}`}>
+                        <ButtonSecondary link={`/products/${link1}`}>Shop Now</ButtonSecondary>
+                    </Link>
                 </div>}
                 {image2 && <div className={classes.item_image}>
                     <h3>{productName2}</h3>
                     <img src={`./images/allproducts/${image2}`} alt="" />
                     <p>{flavour}</p>
-                    <ButtonSecondary>Shop Now</ButtonSecondary>
+                    <Link href={`/products/${link2}`}>
+                        <ButtonSecondary link={`/products/${link1}`}>Shop Now</ButtonSecondary>
+                    </Link>
                 </div>}
             </div>
             <div className={`${classes.item_description} ${classes[cardId]}`}>

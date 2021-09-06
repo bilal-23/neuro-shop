@@ -26,6 +26,7 @@
 }
 .logo img {
   width: 12rem;
+  cursor: pointer;
 }
 .right {
   display: flex;

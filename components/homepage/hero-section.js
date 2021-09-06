@@ -1,5 +1,6 @@
 import classes from './hero-section.module.css';
 import Button from '../ui/button';
+import Link from 'next/link';
 
 function HeroSection(props) {
     const { pos } = props;
@@ -12,7 +13,11 @@ function HeroSection(props) {
                     {props.text && <p>{props.text}</p>}
                 </div>
                 <div className={classes.hero_content_cta}>
-                    <Button>{props.btnText}</Button>
+                    <Link href="/products">
+                        <a href="/products">
+                            <Button>{props.btnText}</Button>
+                        </a>
+                    </Link>
                 </div>
             </div>
         </section>
