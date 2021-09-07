@@ -10,7 +10,7 @@ export default ProductDetailsPage;
 
 export async function getStaticProps(context) {
     const { productId } = context.params;
-    const res = await fetch('http://localhost:3000/api/product-details/' + productId);
+    const res = await fetch(`${process.env.URL}/api/product-details/${productId}`);
     const data = await res.json();
     return {
         props: {
