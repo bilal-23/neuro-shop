@@ -2,13 +2,15 @@ import StarIcon from '@material-ui/icons/Star';
 import classes from './product-detail.module.css';
 import CheckIcon from '@material-ui/icons/Check';
 import Button from '../ui/button';
+import Image from 'next/image';
 
 function ProductDetail(props) {
     const { description, flavor, heading, image1, image2, image3, image4, image5, price, size, star, subheading } = props.product;
     return (
         <section className={classes.section}>
             <div className={classes.product_image}>
-                <img src={`../images/allproducts/${image1}`} alt={heading} />
+                <Image src={`/images/allproducts/${image2}`} width={430} height={430} alt={heading} layout="intrinsic" />
+                {/* <img src={`../images/allproducts/${image1}`} alt={heading} /> */}
             </div>
             <div className={classes.product_detail}>
                 <div className={classes.product_detail_heading}>

@@ -28,7 +28,6 @@ export async function getStaticProps(context) {
     //find the product with id same as give in query 
     try {
         const product = await client.db().collection('products').findOne({ productId: productId });
-        console.log(product)
         client.close();
         return {
             props: {

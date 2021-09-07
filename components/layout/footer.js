@@ -2,13 +2,16 @@ import classes from './footer.module.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import Image from 'next/image';
+
 function Footer() {
     return (
         <footer className={classes.footer}>
             <div className={classes.footer_content}>
                 <div className={classes.left}>
                     <div className={classes.address}>
-                        <img src="../assets/WhiteLogo.svg" alt="logo" />
+                        <Image src="/assets/WhiteLogo.svg" width={120} height={30} alt="neuro" />
+                        {/* <img src="../assets/WhiteLogo.svg" alt="logo" /> */}
                         <address>
                             <span>
                                 Los Angeles, CA 90013

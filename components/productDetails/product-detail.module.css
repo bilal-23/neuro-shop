@@ -10,7 +10,8 @@
   align-items: center;
 }
 .product_image img {
-  width: 50%;
+  width: 100%;
+  object-fit: cover;
 }
 .product_detail {
   padding: 2rem 5rem;
@@ -89,7 +90,7 @@
     grid-template-columns: 1fr 1fr;
   }
   .product_image img {
-    width: 80%;
+    width: 100%;
   }
 }
 
@@ -99,9 +100,7 @@
     display: flex;
     flex-direction: column;
   }
-  .product_image {
-    background-color: rgba(131, 131, 131, 0.1);
-  }
+
   .product_detail {
     padding: 2rem 2rem;
     color: black;

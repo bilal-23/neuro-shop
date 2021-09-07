@@ -3,6 +3,7 @@ import classes from './header.module.css';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 function Header() {
     const [transparent, setTransparent] = useState(true);
     const router = useRouter();
@@ -28,9 +29,9 @@ function Header() {
             }
         }>
             <div className={classes.logo}>
-                {isHomePage && !transparent && <Link href="/"><img src="./assets/BlackLogo.svg" alt="logo" /></Link>}
-                {isHomePage && transparent && <Link href="/"><img src="./assets/WhiteLogo.svg" alt="logo" /></Link>}
-                {!isHomePage && <Link href="/"><img src="../assets/BlackLogo.svg" alt="logo" /></Link>}
+                {isHomePage && !transparent && <Link href="/"> <a> <Image src="/assets/BlackLogo.svg" width={120} height={30} alt="Logo" /></a></Link>}
+                {isHomePage && transparent && <Link href="/"><a><Image src="/assets/WhiteLogo.svg" width={120} height={30} alt="Logo" /></a></Link>}
+                {!isHomePage && <Link href="/"><a><Image src="/assets/BlackLogo.svg" width={120} height={30} alt="Logo" /></a></Link>}
             </div>
             <div className={classes.right}>
                 <ul>
