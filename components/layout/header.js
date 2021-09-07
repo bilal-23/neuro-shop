@@ -29,9 +29,9 @@ function Header() {
             }
         }>
             <div className={classes.logo}>
-                {isHomePage && !transparent && <Link href="/"> <a> <Image src="/assets/BlackLogo.svg" width={120} height={30} alt="Logo" /></a></Link>}
-                {isHomePage && transparent && <Link href="/"><a><Image src="/assets/WhiteLogo.svg" width={120} height={30} alt="Logo" /></a></Link>}
-                {!isHomePage && <Link href="/"><a><Image src="/assets/BlackLogo.svg" width={120} height={30} alt="Logo" /></a></Link>}
+                {isHomePage && !transparent && <Link href="/"><Image src="/assets/BlackLogo.svg" width={120} height={30} alt="Logo" /></Link>}
+                {isHomePage && transparent && <Link href="/"><Image src="/assets/WhiteLogo.svg" width={120} height={30} alt="Logo" /></Link>}
+                {!isHomePage && <Link href="/"><Image src="/assets/BlackLogo.svg" width={120} height={30} alt="Logo" /></Link>}
             </div>
             <div className={classes.right}>
                 <ul>
