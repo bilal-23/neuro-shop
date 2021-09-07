@@ -23,7 +23,7 @@ function GumProducts() {
                 image1="gum-peppermint.png"
                 image2="mint-peppermint.png"
                 productName1="Mints"
-                productName1="GUM"
+                productName2="GUM"
                 flavour="Cinnamon"
                 link1="mint-ginger-chai"
                 reverse={true} />
