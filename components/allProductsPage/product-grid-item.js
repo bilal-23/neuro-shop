@@ -22,7 +22,7 @@ function ProductGridItem(props) {
                 </div>}
                 {image2 && <div className={classes.item_image}>
                     <h3>{productName2}</h3>
-                    <Image src={`/images/allproducts/${image1}`} alt={heading} width={150}
+                    <Image src={`/images/allproducts/${image2}`} alt={heading} width={150}
                         height={200} />
                     <p>{flavour}</p>
                     <Link href={`/products/${link2}`}>
@@ -34,7 +34,7 @@ function ProductGridItem(props) {
             </div>
             <div className={`${classes.item_description} ${classes[cardId]}`}>
                 <div className={classes.item_description_image}>
-                    <Image src={`/assets/${cardId}.png`} alt={heading} width={50} height={50} />
+                    <Image src={`/assets/${cardId}.png`} alt={heading} width={cardId === 'card3' ? 100 : 50} height={50} />
                 </div>
                 <div className={classes.item_description_heading}>
                     <h3>{heading}</h3>

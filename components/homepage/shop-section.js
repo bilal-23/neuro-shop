@@ -11,9 +11,9 @@ function ShopSection() {
                 <h3>Shop by function</h3>
                 <p>Find the right products for any situation.</p>
                 <div className={classes.cards}>
-                    <Card cardId='card1' text='ENERGY & FOCUS' />
-                    <Card cardId='card2' text='CALM & CLARITY' />
-                    <Card cardId='card3' text='IDEAL STATE' />
+                    <Card cardId='card1' text='ENERGY & FOCUS' link="/products/collection/gum" />
+                    <Card cardId='card2' text='CALM & CLARITY' link="/products/mint-ginger-chai" />
+                    <Card cardId='card3' text='IDEAL STATE' link="/products/mint-peppermint-ginger-chai" />
                 </div>
             </div>
         </section>

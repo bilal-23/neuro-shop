@@ -84,6 +84,16 @@
   padding: 2rem 0;
 }
 
+.mint-ginger-chai .custom_color {
+  color: rgb(239, 150, 50);
+}
+.mint-peppermint-ginger-chai .custom_color {
+  color: rgb(100, 186, 161);
+}
+.gum-peppermint .custom_color,
+.mint-peppermint .custom_color {
+  color: rgb(19, 192, 215);
+}
 @media only screen and (max-width: 1200px) {
   .section {
     padding: 10rem 3rem;

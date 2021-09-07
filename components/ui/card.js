@@ -1,5 +1,6 @@
 import classes from './card.module.css'
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Card(props) {
     const { cardId } = props;
@@ -12,9 +13,9 @@ function Card(props) {
                 <p>{props.text}</p>
             </div>
             <div className={classes.bottom}>
-                <a href="#">Shop now</a>
+                <Link href={props.link}> Shop now</Link>
             </div>
-        </div>
+        </div >
     )
 }
 export default Card;

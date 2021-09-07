@@ -52,7 +52,7 @@
   justify-content: flex-end;
 }
 .item_description_image img {
-  height: 5rem;
+  height: 6rem;
 }
 .item_description_heading h3 {
   font-size: 4rem;
@@ -76,6 +76,10 @@
   background-color: rgb(241, 250, 246);
   color: rgb(100, 186, 161);
 }
+.card4 {
+  background-color: #932610;
+  color: #fecb8b;
+}
 .reverse {
   flex-direction: row-reverse;
 }
@@ -84,6 +88,12 @@
   .item {
     gap: 4rem;
     width: 100%;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .item {
+    width: 100%;
+    gap: 3rem;
   }
 }
 @media only screen and (max-width: 700px) {
