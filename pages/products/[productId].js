@@ -1,5 +1,5 @@
 import ProductDetail from "../../components/productDetails/product-detail";
-
+import { server } from '../../config/index';
 function ProductDetailsPage(props) {
     return (
         <ProductDetail product={props.product} />
@@ -10,7 +10,7 @@ export default ProductDetailsPage;
 
 export async function getStaticProps(context) {
     const { productId } = context.params;
-    const res = await fetch(`${process.env.URL}/api/product-details/${productId}`);
+    const res = await fetch(`${server}/api/product-details/${productId}`);
     const data = await res.json();
     return {
         props: {
