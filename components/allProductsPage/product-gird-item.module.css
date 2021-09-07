@@ -19,6 +19,7 @@
 }
 
 .item_image {
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,6 +50,7 @@
 }
 .item_description_image {
   display: flex;
+
   justify-content: flex-end;
 }
 .item_description_image img {

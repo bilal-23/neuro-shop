@@ -1,0 +1,25 @@
+.error {
+  padding-top: 10rem;
+  color: black;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  gap: 2rem;
+}
+.error_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.error_text a {
+  color: rgb(119, 119, 230);
+}
+.error img {
+  width: 40rem;
+}

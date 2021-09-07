@@ -1,10 +1,15 @@
 import ProductDetail from "../../components/productDetails/product-detail";
+import ErrorPage from "../../components/ui/error-page";
 import { connectToDatabase } from '../../util/database';
 function ProductDetailsPage(props) {
     const product = JSON.parse(props.product)
-    return (
-        <ProductDetail product={product} />
-    )
+    if (props.error) {
+        return <ErrorPage />
+    } else {
+        return (
+            <ProductDetail product={product} />
+        )
+    }
 }
 export default ProductDetailsPage;
 
@@ -15,9 +20,10 @@ export async function getStaticProps(context) {
     //connecting to database
     try {
         client = await connectToDatabase();
+        if (!client) throw new Error("Connection to database failed")
     }
     catch (error) {
-        client.close();
+        client?.close();
         return {
             props: {
                 error: 'Cannot connect to database',
@@ -42,7 +48,8 @@ export async function getStaticProps(context) {
             props: {
                 error: 'Product not found',
                 product: null,
-            }
+            },
+            revalidate: 6000
         }
     }
 }
@@ -53,7 +60,9 @@ export function getStaticPaths() {
             { params: { productId: 'gum-peppermint' } },
             { params: { productId: 'mint-peppermint' } },
             { params: { productId: 'mint-ginger-chai' } },
-            { params: { productId: 'mint-peppermint-ginger-chai' } }
+            { params: { productId: 'mint-peppermint-ginger-chai' } },
+            { params: { productId: 'mint-cinnamon' } },
+            { params: { productId: 'gum-cinnamon' } },
         ],
         fallback: false,
     };

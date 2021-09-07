@@ -1,9 +1,9 @@
 import AllProducts from '../../components/allProductsPage/all-products';
 
-function AllProductsPage(props) {
+function AllProductsPage() {
     return (
         <>
-            <AllProducts />
+            <AllProducts heading="Shop All" subheading="Feel your best quickly and conveniently." allProducts={true} />
         </>
     )
 }

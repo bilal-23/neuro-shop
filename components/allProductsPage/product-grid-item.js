@@ -2,7 +2,7 @@ import ButtonSecondary from '../ui/Button-secondary'
 import classes from './product-gird-item.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-
+import SkeletonImage from '../ui/image-skeleton';
 function ProductGridItem(props) {
     const { reverse, heading, text, cardId, image1, image2, productName1, productName2, flavour, link1, link2 } = props;
     return (

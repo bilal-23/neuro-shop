@@ -91,7 +91,9 @@
   color: rgb(100, 186, 161);
 }
 .gum-peppermint .custom_color,
-.mint-peppermint .custom_color {
+.mint-peppermint .custom_color,
+.gum-cinnamon .custom_color,
+.mint-cinnamon .custom_color {
   color: rgb(19, 192, 215);
 }
 @media only screen and (max-width: 1200px) {

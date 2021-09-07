@@ -2,15 +2,14 @@ import StarIcon from '@material-ui/icons/Star';
 import classes from './product-detail.module.css';
 import CheckIcon from '@material-ui/icons/Check';
 import Button from '../ui/button';
-import Image from 'next/image';
+import SkeletonImage from '../ui/image-skeleton';
 
 function ProductDetail(props) {
     const { productId, description, flavor, heading, image1, image2, image3, image4, image5, price, size, star, subheading } = props.product;
     return (
         <section className={`${classes.section} ${classes[productId]}`}>
             <div className={classes.product_image}>
-                <Image src={`/images/allproducts/${image2}`} width={430} height={430} alt={heading} layout="intrinsic" />
-                {/* <img src={`../images/allproducts/${image1}`} alt={heading} /> */}
+                <SkeletonImage height={430} width={430} src={`/images/allproducts/${image1}`} layout="intrinsic" />
             </div>
             <div className={classes.product_detail}>
                 <div className={classes.product_detail_heading}>
@@ -54,7 +53,8 @@ function ProductDetail(props) {
                     </div>
                 </div>
                 <div className={classes.product_buy}>
-                    <Button background="black">Add to bag - {price}</Button>
+                    {price === "Coming Soon" && <Button background="black" disable={true}>{price}</Button>}
+                    {price !== "Coming Soon" && <Button background="black">Add to bag - {price}</Button>}
                 </div>
             </div>
         </section >

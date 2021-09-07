@@ -13,3 +13,9 @@
   cursor: pointer;
   transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1);
 }
+.button[disabled] {
+  cursor: not-allowed;
+}
+.button[disabled]:hover {
+  background-color: rgba(10, 10, 10, 0.8);
+}

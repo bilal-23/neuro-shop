@@ -1,6 +1,8 @@
-import GumProducts from "../../../components/allProductsPage/collection/gum-products";
+import AllProducts from "../../../components/allProductsPage/all-products";
 
 function Gum() {
-    return <GumProducts />
+    return (
+        <AllProducts heading="Energy & Focus" subheading="Optimum energy that fits right into your pocket" allProducts={false} />
+    )
 }
 export default Gum;
