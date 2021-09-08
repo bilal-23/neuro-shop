@@ -1,0 +1,40 @@
+.fallback {
+  padding: 10rem 5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  margin: 0 auto;
+  min-height: 100vh;
+  height: auto;
+}
+
+.fallback_image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fallback_detail {
+  padding: 2rem 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 1200px) {
+  .fallback {
+    padding: 10rem 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .fallback {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fallback_detail {
+    padding: 2rem 2rem;
+    color: black;
+  }
+}

@@ -19,7 +19,6 @@
 }
 
 .item_image {
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
