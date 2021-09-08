@@ -82,6 +82,10 @@
 }
 .product_buy {
   padding: 2rem 0;
+  transition: transform 0.1s ease;
+}
+.product_buy:active {
+  transform: scale(1.01);
 }
 
 .mint-ginger-chai .custom_color {

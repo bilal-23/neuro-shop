@@ -15,13 +15,17 @@ function Header() {
             </div>
             <div className={classes.right}>
                 <ul>
-                    <li>Shop</li>
+                    <Link href="/products"><a><li>Shop</li> </a>
+                    </Link>
                     <li>About</li>
                     <li>Subscription</li>
                     <li>Sign in</li>
-                    <li>
-                        <ShoppingCartIcon style={{ fontSize: 30 }} />
-                    </li>
+                    <Link href="/cart"><a>
+                        <li>
+                            <ShoppingCartIcon style={{ fontSize: 30 }} />
+                        </li>
+                    </a>
+                    </Link>
                 </ul>
             </div>
         </header >

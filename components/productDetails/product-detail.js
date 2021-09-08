@@ -12,10 +12,6 @@ function ProductDetail(props) {
     const cart = useSelector(state => state.cart);
     const { productId, description, flavor, heading, image1, image2, image3, image4, image5, price, size, star, subheading, name, cartImage } = props.product;
 
-    useEffect(() => {
-        console.log(cart);
-    }, [cart])
-
     function addToCartHandler() {
         const productPrice = +price;
         const product = {
