@@ -3,9 +3,32 @@ import classes from './product-detail.module.css';
 import CheckIcon from '@material-ui/icons/Check';
 import Button from '../ui/button';
 import SkeletonImage from '../ui/image-skeleton';
+import { useDispatch, useSelector } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
+import { useEffect } from 'react';
 
 function ProductDetail(props) {
-    const { productId, description, flavor, heading, image1, image2, image3, image4, image5, price, size, star, subheading } = props.product;
+    const dispatch = useDispatch();
+    const cart = useSelector(state => state.cart);
+    const { productId, description, flavor, heading, image1, image2, image3, image4, image5, price, size, star, subheading, name, cartImage } = props.product;
+
+    useEffect(() => {
+        console.log(cart);
+    }, [cart])
+
+    function addToCartHandler() {
+        const productPrice = +price;
+        const product = {
+            name: name,
+            price: productPrice,
+            image: cartImage,
+            quantity: 1,
+            id: productId
+        }
+        console.log(product);
+        dispatch(cartActions.addProduct(product));
+    }
+
     return (
         <section className={`${classes.section} ${classes[productId]}`}>
             <div className={classes.product_image}>
@@ -53,8 +76,8 @@ function ProductDetail(props) {
                     </div>
                 </div>
                 <div className={classes.product_buy}>
-                    {price === "Coming Soon" && <Button background="black" disable={true}>{price}</Button>}
-                    {price !== "Coming Soon" && <Button background="black">Add to bag - {price}</Button>}
+                    {price === "Coming Soon" && <Button background="black" disable={true} onClick={addToCartHandler}>{price}</Button>}
+                    {price !== "Coming Soon" && <Button background="black" onClick={addToCartHandler}>Add to bag - ${price}</Button>}
                 </div>
             </div>
         </section >

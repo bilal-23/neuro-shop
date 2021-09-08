@@ -6,7 +6,6 @@ import { useState } from 'react';
 function SkeletonImage(props) {
     const [imageIsLoaded, setImageIsLoaded] = useState(false);
     function imageLoadHandler() {
-        console.log('loaded')
         setImageIsLoaded(true);
     }
     return (
