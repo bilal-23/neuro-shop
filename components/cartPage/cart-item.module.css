@@ -4,6 +4,8 @@
   gap: 3rem;
   padding: 3rem 2rem;
   border-bottom: 1px solid rgb(233, 233, 233);
+}
+.item:first-child {
   border-top: 1px solid rgb(233, 233, 233);
 }
 .item:last-child {
