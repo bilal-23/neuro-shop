@@ -26,7 +26,7 @@ function Auth() {
                 </div>
             </form>
             <div className={classes.auth_change}>
-                <p>Don't have an account? <span onClick={toggleHandler}>Create One</span></p>
+                <p>Don&apos;t have an account? <span onClick={toggleHandler}>Create One</span></p>
             </div>
         </section>
     )
