@@ -2,8 +2,8 @@ import classes from './Button-secondary.module.css';
 
 function ButtonSecondary(props) {
     return (
-        <div className={`${classes.btn} ${props.tall && classes.tall}`} >{props.children}
-        </div>
+        <button className={`${classes.btn} ${props.tall && classes.tall}`} type={props.type}>{props.children}
+        </button>
     )
 }
 export default ButtonSecondary;

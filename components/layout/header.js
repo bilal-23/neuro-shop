@@ -19,7 +19,10 @@ function Header() {
                     </Link>
                     <li>About</li>
                     <li>Subscription</li>
-                    <li>Sign in</li>
+                    <Link href="/auth"><a>
+                        <li>Sign in</li>
+                    </a>
+                    </Link>
                     <Link href="/cart"><a>
                         <li>
                             <ShoppingCartIcon style={{ fontSize: 30 }} />

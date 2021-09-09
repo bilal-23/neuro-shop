@@ -51,6 +51,9 @@
 .item_quantity_actions button:active {
   font-size: 2.1rem;
 }
+.item_total p {
+  font-family: "Montserrat";
+}
 
 @media only screen and (max-width: 700px) {
   .item {

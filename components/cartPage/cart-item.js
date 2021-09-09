@@ -1,6 +1,7 @@
-import classes from './cart-item.module.css';
 import { cartActions } from '../../store/cart-slice';
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
+import classes from './cart-item.module.css';
 
 function CartItem(props) {
     const dispatch = useDispatch();
@@ -33,10 +34,14 @@ function CartItem(props) {
     return (
         <>
             <div className={classes.item}>
-                <div className={classes.item_name}>
-                    <img src={`./images/allproducts/${props.image}`} alt="" />
-                    <p>{props.name}</p>
-                </div>
+                <Link href={`/products/${props.productId}`}>
+                    <a>
+                        <div className={classes.item_name}>
+                            <img src={`./images/allproducts/${props.image}`} alt="" />
+                            <p>{props.name}</p>
+                        </div>
+                    </a>
+                </Link>
                 <div className={classes.item_shipment}>
                     <p>One Time Purchase</p>
                 </div>

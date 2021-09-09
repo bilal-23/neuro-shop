@@ -1,15 +1,18 @@
 .btn {
   background: white;
-  color: black;
+  color: rgba(0, 0, 0, 0.9);
   border: 2px solid black;
   font-size: 1.5rem;
   padding: 0.7rem 4rem;
   line-height: 1;
   text-decoration: none;
   text-align: center;
+  width: 100%;
   font-weight: 600;
+  letter-spacing: 1px;
   text-transform: uppercase;
   transition: all 0.75s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
 }
 .btn:hover {
   background: black;
