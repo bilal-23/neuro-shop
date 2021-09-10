@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import Alert from '@material-ui/lab/Alert';
 import ButtonSecondary from '../ui/Button-secondary';
-import { signIn } from 'next-auth/client'
+import { signIn, useSession } from 'next-auth/client'
 import classes from './auth.module.css';
 
 function Auth() {
+    const emailRef = useRef();
+    const passwordRef = useRef();
     const [isLogin, setIsLogin] = useState(true);
     const [error, setError] = useState(false);
     const [success, SetSuccess] = useState(false);
-    const emailRef = useRef();
-    const passwordRef = useRef();
+
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -27,16 +28,37 @@ function Auth() {
         setIsLogin(prevState => !prevState);
     }
 
+    async function createAccount(email, password) {
+        try {
+            const res = await fetch('/api/auth/signup', {
+                method: 'POST',
+                body: JSON.stringify({ email, password }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.error);
+            } else {
+                SetSuccess(data.message);
+            }
+
+        } catch (error) {
+            setError(error.message);
+        }
+    }
+
     //auth handler
     async function authHandler(e) {
         e.preventDefault();
         const enteredEmail = emailRef.current.value.trim();
         const enteredPassword = passwordRef.current.value.trim();
-
         if (!enteredEmail || !enteredPassword || enteredPassword.length < 6 || enteredEmail.length < 10) {
             setError('Invalid Inputs');
             return;
         }
+
         if (isLogin) {
             try {
                 const result = await signIn('credentials', {
@@ -44,37 +66,17 @@ function Auth() {
                     email: enteredEmail,
                     password: enteredPassword
                 });
-                console.log(result);
-                SetSuccess("loggedin");
+                if (!result.error) {
+                    SetSuccess('Logged In');
+                } else {
+                    throw new Error(result.error);
+                }
             } catch (err) {
                 setError(err.message);
-                console.log(error);
             }
-
-
         } else {
             //create account logic
-            console.log(enteredEmail, enteredPassword)
-            try {
-                const res = await fetch('/api/auth/signup', {
-                    method: 'POST',
-                    body: JSON.stringify({ email: enteredEmail, password: enteredPassword }),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                const data = await res.json();
-                console.log("res", res);
-                console.log("data", data);
-                if (!res.ok) {
-                    throw new Error(data.error);
-                } else {
-                    SetSuccess(data.message);
-                }
-
-            } catch (error) {
-                setError(error.message);
-            }
+            createAccount(enteredEmail, enteredPassword);
         }
     }
 

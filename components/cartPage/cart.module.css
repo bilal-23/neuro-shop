@@ -110,7 +110,10 @@
     display: none;
   }
   .cart_empty_actions {
-    width: 50%;
+    width: 60%;
+  }
+  .cart_empty_actions button {
+    padding: 1rem 0rem !important;
   }
   .cart_total {
     width: 50%;

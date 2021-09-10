@@ -2,9 +2,11 @@ import classes from './header.module.css';
 import Link from 'next/link';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Image from 'next/image';
+import { useSession } from 'next-auth/client';
 
 
 function Header() {
+    const [session, loading] = useSession();
     return (
         <header className={classes.header} style={{
             color: 'black',
@@ -19,10 +21,12 @@ function Header() {
                     </Link>
                     <li>About</li>
                     <li>Subscription</li>
-                    <Link href="/auth"><a>
+                    {!session && <Link href="/auth"><a>
                         <li>Sign in</li>
-                    </a>
-                    </Link>
+                    </a></Link>}
+                    {session && <Link href="/profile"><a>
+                        <li>Profile</li>
+                    </a></Link>}
                     <Link href="/cart"><a>
                         <li>
                             <ShoppingCartIcon style={{ fontSize: 30 }} />
@@ -35,3 +39,4 @@ function Header() {
     )
 }
 export default Header;
+

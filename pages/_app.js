@@ -3,8 +3,9 @@ import NProgress from "nprogress";
 import Head from 'next/head';
 import Layout from '../components/layout/layout';
 import '../styles/globals.css';
-import { Provider } from 'react-redux';
+import { Provider as ReduxProvider } from 'react-redux';
 import store from '../store/index';
+import { Provider as AuthProvider } from "next-auth/client";
 
 Router.onRouteChangeStart = url => {
   NProgress.configure({ showSpinner: false }).start()
@@ -15,14 +16,16 @@ Router.onRouteChangeError = () => NProgress.done()
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Provider store={store}>
-        <Head>
-          <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" />
-        </Head>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Provider>
+      <AuthProvider session={pageProps.session}>
+        <ReduxProvider store={store}>
+          <Head>
+            <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" />
+          </Head>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ReduxProvider>
+      </AuthProvider>
     </>)
 }
 

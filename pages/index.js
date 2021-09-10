@@ -12,3 +12,15 @@ export default function Home() {
     </>
   )
 }
+
+export async function getStaticProps(context) {
+  const session = getSession({ req: context.req });
+  if (session) {
+    return {
+      props: {
+        session: session,
+      }
+    }
+  }
+
+}
