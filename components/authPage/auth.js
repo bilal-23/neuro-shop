@@ -1,18 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 import Alert from '@material-ui/lab/Alert';
 import ButtonSecondary from '../ui/Button-secondary';
+import { signIn } from 'next-auth/client'
 import classes from './auth.module.css';
 
 function Auth() {
-    const [signin, setSignin] = useState(true);
+    const [isLogin, setIsLogin] = useState(true);
     const [error, setError] = useState(false);
     const [success, SetSuccess] = useState(false);
     const emailRef = useRef();
     const passwordRef = useRef();
 
-    function toggleHandler() {
-        setSignin(prevState => !prevState);
-    }
     useEffect(() => {
         const timeout = setTimeout(() => {
             setError(false);
@@ -24,6 +22,12 @@ function Auth() {
         }
     }, [error, success]);
 
+    //toggle sign in create-account form
+    function toggleHandler() {
+        setIsLogin(prevState => !prevState);
+    }
+
+    //auth handler
     async function authHandler(e) {
         e.preventDefault();
         const enteredEmail = emailRef.current.value.trim();
@@ -33,8 +37,21 @@ function Auth() {
             setError('Invalid Inputs');
             return;
         }
-        if (signin) {
-            //signin logic
+        if (isLogin) {
+            try {
+                const result = await signIn('credentials', {
+                    redirect: false,
+                    email: enteredEmail,
+                    password: enteredPassword
+                });
+                console.log(result);
+                SetSuccess("loggedin");
+            } catch (err) {
+                setError(err.message);
+                console.log(error);
+            }
+
+
         } else {
             //create account logic
             console.log(enteredEmail, enteredPassword)
@@ -67,8 +84,8 @@ function Auth() {
             {success && <Alert severity="success" className="alert">{success}</Alert>}
             <section className={classes.auth}>
                 <div className={classes.auth_heading}>
-                    {signin && <h3>Sign In</h3>}
-                    {!signin && <h3>Create Your Account</h3>}
+                    {isLogin && <h3>Sign In</h3>}
+                    {!isLogin && <h3>Create Your Account</h3>}
                 </div>
                 <form onSubmit={authHandler}>
                     <div className={classes.form_input_group}>
@@ -78,11 +95,12 @@ function Auth() {
                         <input type="password" placeholder="Password" ref={passwordRef} min="6" />
                     </div>
                     <div className={classes.form_input_group}>
-                        <ButtonSecondary type="submit" tall={true}>{signin ? 'Sign In' : 'Create Account'}</ButtonSecondary>
+                        <ButtonSecondary type="submit" tall={true}>{isLogin ? 'Sign In' : 'Create Account'}</ButtonSecondary>
                     </div>
                 </form>
                 <div className={classes.auth_change}>
-                    <p>Don&apos;t have an account? <span onClick={toggleHandler}>Create One</span></p>
+                    {isLogin && <p>Don&apos;t have an account? <span onClick={toggleHandler}>Create One</span></p>}
+                    {!isLogin && <p>Already have an account? <span onClick={toggleHandler}>Sign In</span></p>}
                 </div>
             </section>
         </>
