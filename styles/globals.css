@@ -45,6 +45,16 @@ p {
     font-size: 5rem;
   }
 }
+.alert {
+  margin-top: 8rem !important;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem !important;
+}
+
 @media only screen and (max-width: 900px) {
   html {
     font-size: 50%;
