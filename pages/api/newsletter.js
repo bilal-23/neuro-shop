@@ -1,5 +1,4 @@
-import { hashPassword } from '../../../util/auth';
-import { connectToDatabase } from '../../../util/database';
+import { connectToDatabase } from "../../util/database";
 
 async function handler(req, res) {
     if (req.method !== 'POST') {
@@ -7,19 +6,13 @@ async function handler(req, res) {
         return;
     }
     const email = req.body.email;
-    const password = req.body.password;
+
     //data validation
-    if (!email.trim() || !password.trim() || password.trim().length < 6 || email.trim().length < 10) {
+    if (!email || email.trim().length < 7 || !email.trim().includes('@')) {
         res.status(422).json({ error: 'Invalid input' })
         return;
     }
 
-    const encryptedPassword = await hashPassword(password);
-
-    const newUserAccount = {
-        email: email,
-        password: encryptedPassword,
-    }
     //connecting to data
     let client;
     try {
@@ -34,15 +27,9 @@ async function handler(req, res) {
     //setting new user in db
     try {
         const db = client.db();
-        const existingUser = await db.collection('users').findOne({ email: email });
-        if (existingUser) {
-            client.close()
-            res.status(422).json({ error: 'User already exist' })
-            return;
-        }
-        const result = await db.collection('users').insertOne(newUserAccount);
+        const result = await db.collection('newsletter').insertOne({ email: email });
         client.close();
-        res.status(201).json({ message: 'Account Created', error: null });
+        res.status(201).json({ message: 'Succesully Registered', error: null });
     }
     catch (error) {
         client.close();

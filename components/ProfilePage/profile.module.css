@@ -43,9 +43,6 @@
 .profile_nav_content h2 {
   font-size: 4rem;
 }
-/* @media only screen and (max-width:px){
-    
-} */
 @media only screen and (max-width: 1200px) {
   .profile {
     min-height: 50vh;
@@ -62,7 +59,6 @@
   .profile {
     min-height: 55vh;
     padding: 10rem 1rem;
-    border: 2px solid red;
     display: flex;
   }
   .profile_nav {
@@ -71,7 +67,6 @@
     padding-left: 1rem;
   }
   .profile_nav_content {
-    border: 2px solid red;
     width: 100%;
   }
   .profile_nav_content h2 {

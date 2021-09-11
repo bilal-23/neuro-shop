@@ -2,6 +2,7 @@ import classes from './footer.module.css';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import FooterForm from './footer-form';
 import Image from 'next/image';
 
 function Footer() {
@@ -36,13 +37,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className={classes.right}>
-                    <div className={classes.right_heading}>
-                        <p>Never miss an update</p>
-                        <div className={classes.right_input}>
-                            <input type="email" placeholder="Email" />
-                            <span>Sign Up</span>
-                        </div>
-                    </div>
+                    <FooterForm />
                     <div className={classes.social}>
                         <a href="#">
                             <FacebookIcon className={classes.social_icon} style={{ fontSize: 30 }} />

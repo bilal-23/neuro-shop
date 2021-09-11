@@ -1,0 +1,64 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+.form p {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.6;
+  letter-spacing: 0.3rem;
+}
+.form_input {
+  width: 100%;
+  display: flex;
+}
+.form_input input {
+  width: 100%;
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  background: #000;
+  outline: none;
+  border-bottom: 2px solid #fff;
+}
+.form_input button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  margin-left: -6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.form_success {
+  font-size: 1.8rem;
+  text-align: center;
+  gap: 2rem;
+  width: 70%;
+}
+.form_success .form_success_message {
+  font-size: 1.3rem !important;
+  text-align: center;
+  color: white !important;
+  opacity: 1;
+}
+.form .error {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 700;
+  bottom: -30%;
+  opacity: 1;
+  color: rgb(223, 152, 152);
+  margin-top: -1rem;
+}
+.spinner {
+  margin-left: -3rem !important;
+  color: white !important;
+  padding: 0;
+  width: 2rem !important;
+  height: 2rem !important;
+}

@@ -68,31 +68,7 @@
   flex-direction: column;
   gap: 3rem;
 }
-.right_heading p {
-  font-size: 2rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  opacity: 0.6;
-  letter-spacing: 0.3rem;
-}
-.right_input {
-  width: 100%;
-}
-.right_input input {
-  width: 100%;
-  color: white;
-  font-size: 1.5rem;
-  border: none;
-  background: #000;
-  outline: none;
-  border-bottom: 2px solid #fff;
-}
-.right_input span {
-  position: absolute;
-  margin-left: -6rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-}
+
 /* social media icons/ */
 .social {
   display: flex;
@@ -146,6 +122,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .footer {
+    height: auto;
+  }
   .left,
   .right {
     width: 90%;
