@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import Alert from '@material-ui/lab/Alert';
 import ButtonSecondary from '../ui/Button-secondary';
 import { signIn, useSession } from 'next-auth/client'
+import { useRouter } from 'next/router';
 import classes from './auth.module.css';
 
 function Auth() {
@@ -10,7 +11,8 @@ function Auth() {
     const [isLogin, setIsLogin] = useState(true);
     const [error, setError] = useState(false);
     const [success, SetSuccess] = useState(false);
-
+    const [session, loading] = useSession();
+    const router = useRouter();
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -68,6 +70,8 @@ function Auth() {
                 });
                 if (!result.error) {
                     SetSuccess('Logged In');
+                    router.replace('/account')
+
                 } else {
                     throw new Error(result.error);
                 }
@@ -109,3 +113,4 @@ function Auth() {
     )
 }
 export default Auth;
+

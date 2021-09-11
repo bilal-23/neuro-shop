@@ -1,18 +1,21 @@
-import { getSession } from "next-auth/client";
-import Auth from "../../components/authPage/auth";
+import { getSession } from 'next-auth/client';
+import Profile from '../components/ProfilePage/profile';
 
-function SignInPage() {
-    return <Auth />
+function AccountPage() {
+
+    return (
+        <Profile />
+    )
 }
-export default SignInPage;
+export default AccountPage;
 
 export async function getServerSideProps(context) {
     const session = await getSession({ req: context.req })
 
-    if (session) {
+    if (!session) {
         return {
             redirect: {
-                destination: '/account',
+                destination: '/auth',
                 permanent: false
             }
         };

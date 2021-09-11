@@ -24,8 +24,8 @@ function Header() {
                     {!session && <Link href="/auth"><a>
                         <li>Sign in</li>
                     </a></Link>}
-                    {session && <Link href="/profile"><a>
-                        <li>Profile</li>
+                    {session && <Link href="/account"><a>
+                        <li>Account</li>
                     </a></Link>}
                     <Link href="/cart"><a>
                         <li>
