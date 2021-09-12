@@ -1,0 +1,27 @@
+.checkout {
+  min-height: 100vh;
+  color: black;
+  padding: 10rem 6rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
+  margin: 0 auto;
+}
+.checkout_left {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.checkout_right {
+  border-left: 2px solid rgb(83, 83, 83);
+}
+
+@media only screen and (max-width: 700px) {
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 1rem;
+  }
+}

@@ -31,7 +31,7 @@ function Cart() {
                         <p>Taxes and shipping calculated at checkout</p>
                     </div>
                     <div className={classes.cart_actions}>
-                        <Link href="/"><a><Button tall={true}>Checkout</Button></a></Link>
+                        <Link href="/checkout"><a><Button tall={true}>Checkout</Button></a></Link>
                     </div>
                 </>
                 }
