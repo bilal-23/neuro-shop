@@ -1,4 +1,5 @@
 import classes from './checkout.module.css';
+import OrderDetails from './order-details';
 import ShippingForm from './shipping_form';
 
 function Checkout() {
@@ -9,8 +10,9 @@ function Checkout() {
                 <ShippingForm />
             </div>
             <div className={classes.checkout_right}>
-
+                <OrderDetails />
             </div>
+
         </section>
     )
 }

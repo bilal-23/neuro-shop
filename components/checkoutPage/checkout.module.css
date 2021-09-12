@@ -3,7 +3,7 @@
   color: black;
   padding: 10rem 6rem;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1.5fr 1fr;
   width: 100%;
   margin: 0 auto;
 }
@@ -17,11 +17,27 @@
 .checkout_right {
   border-left: 2px solid rgb(83, 83, 83);
 }
-
+@media only screen and (max-width: 1100px) {
+  .checkout {
+    padding: 10rem 1rem;
+    min-height: 60vh;
+  }
+}
+@media only screen and (max-width: 900) {
+  .checkout {
+    padding: 10rem 1rem;
+    min-height: 80vh;
+  }
+}
 @media only screen and (max-width: 700px) {
   .checkout {
     display: flex;
     flex-direction: column;
     padding: 10rem 1rem;
+  }
+  .checkout_right {
+    margin-top: 2rem;
+    border-top: 2px solid rgb(83, 83, 83);
+    border-left: none;
   }
 }

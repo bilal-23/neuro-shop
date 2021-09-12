@@ -53,7 +53,7 @@ function CartItem(props) {
                     </div>
                 </div>
                 <div className={classes.item_total}>
-                    <p>$ {props.totalPrice}</p>
+                    <p>₹ {props.totalPrice}</p>
                 </div>
             </div>
         </>

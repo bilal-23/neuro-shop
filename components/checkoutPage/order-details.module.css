@@ -1,0 +1,57 @@
+.order {
+  padding: 2rem 4rem;
+}
+.order_discount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+.order_total {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  gap: 2rem;
+}
+.order_total > div {
+  display: flex;
+  justify-content: space-between;
+}
+.order_total > div > p {
+  font-size: 1.5rem;
+  color: rgb(83, 83, 83);
+}
+.order_total > div > p:last-child {
+  color: rgb(10, 10, 10);
+  font-family: "Montserrat", sans-serif;
+}
+.order_total_price {
+  display: flex;
+  padding-top: 2rem;
+  border-top: 2px solid rgb(83, 83, 83);
+  justify-content: space-between;
+}
+.order_total_price p:last-child {
+  font-size: 2rem;
+  font-family: "Montserrat", sans-serif;
+}
+.order_action {
+  padding: 2rem 0;
+}
+.order_action button {
+  cursor: pointer;
+  display: block;
+  padding: 1.5rem 4rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: teal;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media only screen and (max-width: 700px) {
+  .order {
+    padding: 2rem 1rem;
+  }
+}

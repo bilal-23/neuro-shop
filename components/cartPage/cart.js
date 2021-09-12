@@ -27,7 +27,7 @@ function Cart() {
                         {cartItems?.map(item => <CartItem key={item.id} productId={item.id} image={item.image} name={item.name} price={item.price} quantity={item.quantity} totalPrice={item.totalPrice} />)}
                     </div>
                     <div className={classes.cart_total}>
-                        <p>Subtotal <span>${totalPrice}</span></p>
+                        <p>Subtotal <span>₹{totalPrice}</span></p>
                         <p>Taxes and shipping calculated at checkout</p>
                     </div>
                     <div className={classes.cart_actions}>

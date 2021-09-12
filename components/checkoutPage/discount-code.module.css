@@ -1,0 +1,21 @@
+.input_group button {
+  cursor: pointer;
+  display: block;
+  margin-left: 2rem;
+  padding: 0.7rem 4rem;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: teal;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.input_group input:placeholder-shown + button {
+  background-color: #c8c8c8;
+  cursor: not-allowed;
+}
+.remove {
+  cursor: pointer !important;
+  background-color: teal !important;
+}

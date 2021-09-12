@@ -1,0 +1,45 @@
+.item {
+  display: flex;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  border-bottom: 1px solid rgb(233, 233, 233);
+  width: 100%;
+  justify-content: space-between;
+}
+
+.item p {
+  font-size: 1.5rem !important;
+}
+.item_name {
+  display: flex;
+  gap: 2rem;
+  max-width: 50%;
+}
+.item_name img {
+  width: 5rem;
+}
+.item_quantity {
+  display: flex;
+  justify-content: center;
+  padding: 0 4rem;
+}
+
+.item_total p {
+  font-family: "Montserrat";
+  justify-self: flex-end;
+}
+
+@media only screen and (max-width: 900px) {
+  .item_name {
+    max-width: 60%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .item {
+    display: flex;
+    max-width: 50%;
+  }
+  .item_quantity {
+    padding: 0 2rem;
+  }
+}

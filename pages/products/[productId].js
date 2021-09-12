@@ -58,7 +58,7 @@ export async function getStaticProps(context) {
             props: {
                 error: null,
                 product: JSON.stringify(product),
-            }, revalidate: 6000
+            }, revalidate: 600000
         }
     }
     catch (error) {

@@ -67,13 +67,13 @@ function ProductDetail(props) {
                         <CheckIcon style={{ fontSize: 20 }} />
                         <div className={classes.product_detail_feature_text}>
                             <p>Fast Shipping</p>
-                            <p>Free shipping over $35. Subscription shipping always free.</p>
+                            <p>Free shipping over ₹350. Subscription shipping always free.</p>
                         </div>
                     </div>
                 </div>
                 <div className={classes.product_buy}>
                     {price === "Coming Soon" && <Button background="black" disable={true} onClick={addToCartHandler}>{price}</Button>}
-                    {price !== "Coming Soon" && <Button background="black" onClick={addToCartHandler}>Add to bag - ${price}</Button>}
+                    {price !== "Coming Soon" && <Button background="black" onClick={addToCartHandler}>Add to bag - ₹{price}</Button>}
                 </div>
             </div>
         </section >
