@@ -8,7 +8,7 @@ function OrderDetails() {
     const [discountApplied, setDiscountApplied] = useState(false);
     const [totalPrice, setTotalPrice] = useState();
     const order = useSelector(state => state.cart);
-
+    console.log(order);
     function couponHandler(code) {
         if (!discountApplied) {
             if (code !== 'FREE100') {

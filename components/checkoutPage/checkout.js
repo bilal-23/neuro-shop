@@ -11,7 +11,6 @@ function Checkout() {
     const [cartIsEmpty, setCartIsEmpty] = useState(true);
     const router = useRouter();
 
-    console.log(cartIsEmpty)
     useEffect(() => {
         if (cartProduct.length > 0) {
             setCartIsEmpty(false);
@@ -20,7 +19,7 @@ function Checkout() {
             router.replace('/cart')
         }
 
-    }, [])
+    }, [cartProduct.length])
 
     if (cartIsEmpty) {
         return (<section className={classes.checkout}>

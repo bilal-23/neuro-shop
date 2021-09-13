@@ -2,7 +2,7 @@ import { cartActions } from '../../store/cart-slice';
 import { useDispatch } from 'react-redux';
 import Link from 'next/link';
 import classes from './cart-item.module.css';
-
+import SkeletonImage from '../ui/image-skeleton';
 function CartItem(props) {
     const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ function CartItem(props) {
                 <Link href={`/products/${props.productId}`}>
                     <a>
                         <div className={classes.item_name}>
-                            <img src={`./images/allproducts/${props.image}`} alt="" />
+                            <SkeletonImage src={`/images/allproducts/${props.image}`} alt={props.name} width={150} height={150} />
                             <p>{props.name}</p>
                         </div>
                     </a>

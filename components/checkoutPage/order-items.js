@@ -1,10 +1,11 @@
 import classes from './order-items.module.css';
+import Image from 'next/image';
 
 function OrderItems(props) {
     return (
         <div className={classes.item}>
             <div className={classes.item_name}>
-                <img src={`./images/allproducts/${props.image}`} alt="" />
+                <Image src={`/images/allproducts/${props.image}`} alt={props.name} width={200} height={200} />
                 <p>{props.name}</p>
             </div>
             <div className={classes.item_quantity}>

@@ -3,7 +3,14 @@ import { createSlice } from '@reduxjs/toolkit';
 const cartSlice = createSlice({
     name: "cart",
     initialState: {
-        products: [],
+        products: [{
+            id: "mint-peppermint-ginger-chai",
+            image: "mint-peppermint-ginger-chai/1.jpg",
+            name: "Neuro Mints Ideal State - Peppermint / Honey Lemon",
+            price: 39,
+            quantity: 5,
+            totalPrice: 195,
+        }],
         totalPrice: 0,
     },
     reducers: {

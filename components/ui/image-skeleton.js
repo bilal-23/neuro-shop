@@ -3,6 +3,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import Image from 'next/image';
 import { useState } from 'react';
 
+
 function SkeletonImage(props) {
     const [imageIsLoaded, setImageIsLoaded] = useState(false);
     function imageLoadHandler() {

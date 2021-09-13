@@ -110,6 +110,11 @@
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .section {
+    min-height: 70vh;
+  }
+}
 @media only screen and (max-width: 700px) {
   .section {
     margin-top: 5rem;
