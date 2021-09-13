@@ -9,7 +9,7 @@ function Cart() {
     const cart = useSelector(state => state.cart);
     const cartItems = cart.products;
     const totalPrice = cart.totalPrice;
-    console.log(cart);
+
     return (
         <section className={classes.cart}>
             <div className={classes.cart_heading}>

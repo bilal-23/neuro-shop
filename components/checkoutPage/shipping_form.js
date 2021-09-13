@@ -80,7 +80,7 @@ function ShippingForm() {
                         <option value="Chhattisgarh">Chhattisgarh</option>
                         <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
                         <option value="Daman and Diu">Daman and Diu</option>
-                        <option value="Delhi" selected>Delhi</option>
+                        <option value="Delhi" defaultValue>Delhi</option>
                         <option value="Goa">Goa</option>
                         <option value="Gujarat">Gujarat</option>
                         <option value="Haryana">Haryana</option>

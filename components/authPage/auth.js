@@ -1,17 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
 import Alert from '@material-ui/lab/Alert';
 import ButtonSecondary from '../ui/Button-secondary';
-import { signIn, useSession } from 'next-auth/client'
+import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router';
 import classes from './auth.module.css';
+import Spinner from '../ui/spinner';
 
 function Auth() {
     const emailRef = useRef();
     const passwordRef = useRef();
+    const [loading, setLoading] = useState(false);
     const [isLogin, setIsLogin] = useState(true);
     const [error, setError] = useState(false);
     const [success, SetSuccess] = useState(false);
-    const [session, loading] = useSession();
     const router = useRouter();
 
     useEffect(() => {
@@ -54,6 +55,7 @@ function Auth() {
     //auth handler
     async function authHandler(e) {
         e.preventDefault();
+        setLoading(true);
         const enteredEmail = emailRef.current.value.trim();
         const enteredPassword = passwordRef.current.value.trim();
         if (!enteredEmail || !enteredPassword || enteredPassword.length < 6 || enteredEmail.length < 10) {
@@ -82,6 +84,7 @@ function Auth() {
             //create account logic
             createAccount(enteredEmail, enteredPassword);
         }
+        setLoading(false);
     }
 
     return (
@@ -89,6 +92,7 @@ function Auth() {
             {error && <Alert severity="error" className="alert">{error}</Alert>}
             {success && <Alert severity="success" className="alert">{success}</Alert>}
             <section className={classes.auth}>
+                {loading && <Spinner />}
                 <div className={classes.auth_heading}>
                     {isLogin && <h3>Sign In</h3>}
                     {!isLogin && <h3>Create Your Account</h3>}
