@@ -32,12 +32,12 @@
 @media only screen and (max-width: 700px) {
   .checkout {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 10rem 1rem;
   }
   .checkout_right {
     margin-top: 2rem;
-    border-top: 2px solid rgb(83, 83, 83);
+    border-bottom: 2px solid rgb(83, 83, 83);
     border-left: none;
   }
 }

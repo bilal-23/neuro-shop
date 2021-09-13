@@ -53,9 +53,7 @@ function OrderDetails() {
                     <p>₹{totalPrice ? totalPrice : order.totalPrice}</p>
                 </div>
             </div>
-            <div className={classes.order_action}>
-                <button>Continue to payment</button>
-            </div>
+
         </div>
     )
 }

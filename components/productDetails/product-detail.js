@@ -5,7 +5,6 @@ import Button from '../ui/button';
 import SkeletonImage from '../ui/image-skeleton';
 import { useDispatch, useSelector } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
-import { useEffect } from 'react';
 
 function ProductDetail(props) {
     const dispatch = useDispatch();
