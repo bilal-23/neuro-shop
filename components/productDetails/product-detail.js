@@ -20,7 +20,6 @@ function ProductDetail(props) {
             quantity: 1,
             id: productId
         }
-        console.log(product);
         dispatch(cartActions.addProduct(product));
     }
 

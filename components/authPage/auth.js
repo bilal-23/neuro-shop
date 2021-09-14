@@ -26,12 +26,19 @@ function Auth() {
         }
     }, [error, success]);
 
+    //reset input fields
+    function resetInputFields() {
+        emailRef.current.value = "";
+        passwordRef.current.value = "";
+    }
+
     //toggle sign in create-account form
     function toggleHandler() {
         setIsLogin(prevState => !prevState);
     }
 
     async function createAccount(email, password) {
+        setLoading(true);
         try {
             const res = await fetch('/api/auth/signup', {
                 method: 'POST',
@@ -45,46 +52,58 @@ function Auth() {
                 throw new Error(data.error);
             } else {
                 SetSuccess(data.message);
+                logIn(email, password);
             }
 
         } catch (error) {
             setError(error.message);
+            setLoading(false);
         }
+        resetInputFields();
     }
+
+    async function logIn(email, password) {
+        setLoading(true);
+        try {
+            const result = await signIn('credentials', {
+                redirect: false,
+                email: email,
+                password: password
+            });
+            if (!result.error) {
+                resetInputFields();
+                SetSuccess('Logged In');
+                router.replace('/account')
+
+            } else {
+                throw new Error(result.error);
+            }
+        } catch (err) {
+            resetInputFields();
+            setError(err.message);
+        }
+        setLoading(false);
+    }
+
 
     //auth handler
     async function authHandler(e) {
-        e.preventDefault();
         setLoading(true);
+        e.preventDefault();
         const enteredEmail = emailRef.current.value.trim();
         const enteredPassword = passwordRef.current.value.trim();
         if (!enteredEmail || !enteredPassword || enteredPassword.length < 6 || enteredEmail.length < 10) {
             setError('Invalid Inputs');
+            setLoading(false);
             return;
         }
 
         if (isLogin) {
-            try {
-                const result = await signIn('credentials', {
-                    redirect: false,
-                    email: enteredEmail,
-                    password: enteredPassword
-                });
-                if (!result.error) {
-                    SetSuccess('Logged In');
-                    router.replace('/account')
-
-                } else {
-                    throw new Error(result.error);
-                }
-            } catch (err) {
-                setError(err.message);
-            }
+            logIn(enteredEmail, enteredPassword);
         } else {
-            //create account logic
             createAccount(enteredEmail, enteredPassword);
         }
-        setLoading(false);
+
     }
 
     return (
