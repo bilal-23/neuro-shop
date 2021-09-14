@@ -59,7 +59,6 @@ function FooterForm() {
         return (
             <form className={`${classes.form} ${classes.form_success}`}>
                 <p className={classes.form_success_heading}>Thanks for subscribing!</p>
-                <p className={classes.form_success_message}>Check your email for a confirmation message.</p>
             </form>
         )
     }

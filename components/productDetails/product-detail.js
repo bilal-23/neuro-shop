@@ -4,15 +4,14 @@ import classes from './product-detail.module.css';
 import CheckIcon from '@material-ui/icons/Check';
 import Button from '../ui/button';
 import SkeletonImage from '../ui/image-skeleton';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
 import Alert from '@material-ui/lab/Alert';
 
 function ProductDetail(props) {
     const [showToaster, setShowToaster] = useState(false);
     const dispatch = useDispatch();
-    const cart = useSelector(state => state.cart);
-    const { productId, description, flavor, heading, image1, image2, image3, image4, image5, price, size, star, subheading, name, cartImage } = props.product;
+    const { productId, description, flavor, heading, image1, price, size, star, subheading, name, cartImage } = props.product;
 
 
     useEffect(() => {
@@ -24,7 +23,6 @@ function ProductDetail(props) {
             clearTimeout(timeout);
         }
     }, [showToaster]);
-
 
 
     function addToCartHandler() {
