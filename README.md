@@ -1,34 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Neuro Shop 🛒
 
-## Getting Started
+E-commerce site clone amde with Next.js. 
 
-First, run the development server:
+## Features 💡 
 
-```bash
-npm run dev
-# or
-yarn dev
+- Add products to cart.
+- Checkout.
+- Multiple Products.
+- Change quantity in cart section.
+- Authentication
+
+## Screenshots
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
+  <img src="https://raw.githubusercontent.com/bilal-23/neuro-shop/master/screenshots/pic-1.png" alt="Home Page" width="100%">
+  <img src="https://raw.githubusercontent.com/bilal-23/neuro-shop/master/screenshots/pic-4.png" alt="Products Page" width="100%">
+   <img src="https://raw.githubusercontent.com/bilal-23/neuro-shop/master/screenshots/pic-5.png" alt="Checkout Page" width="100%">
+</div>
+
+## Getting Started 🚀
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites 📋
+
+You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [NPM](http://npmjs.com)) installed on your computer.
+
+```
+node@v10.16.0 or higher
+npm@6.9.0 or higher
+git@2.17.1 or higher
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How To Use 🔧
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+From your command line, first clone this repo:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+# Clone this repository
+$ git clone https://github.com/bilal-23/neuro-shop/
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Go into the repository
+$ cd neuro-shop
 
-## Learn More
+# Remove current origin repository
+$ git remote remove origin
+```
 
-To learn more about Next.js, take a look at the following resources:
+Then you can install the dependencies either using NPM or Yarn:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Using NPM:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+# Install dependencies
+$ npm install
 
-## Deploy on Vercel
+# Start development server
+$ npm start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Once your server has started, go to this url `http://localhost:3000/` and you will see the website running on a Development Server.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Technologies used 🛠️
+
+- [Webpack](https://webpack.js.org/concepts/) - Static module bundler
+- [Next.js](https://nextjs.org/) - React Framework
+- [Next-Auth](https://next-auth.js.org/) - Authentication for Next.js
+- [Material-UI](https://material-ui.com/) - A Popular React UI Framework
+- [bcryptjs](https://www.npmjs.com/package/bcryptjs) - Optimized bcrypt in JavaScript with zero dependencies
+- [React Redux](https://react-redux.js.org/) - Official React bindings for Redux
+- [Redux Toolkit](https://redux-toolkit.js.org/) - The official, opinionated, batteries-included toolset for efficient Redux development
+- [nprogress](https://www.npmjs.com/package/nprogress) - Slim progress bars for Ajax'y applications. 
+
+#### Note-
+
+This site is a clone of an e-commerce site named [Neuro](https://getneuro.com/). No Copyrights reseved
