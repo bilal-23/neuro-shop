@@ -73,7 +73,7 @@ function Auth() {
             if (!result.error) {
                 resetInputFields();
                 SetSuccess('Logged In');
-                router.replace('/account')
+                router.replace('/account');
 
             } else {
                 throw new Error(result.error);
