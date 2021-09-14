@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import classes from './shipping_form.module.css';
 
-function ShippingForm() {
+function ShippingForm(props) {
     const [formIsValid, setFormIsValid] = useState();
     const firstNameRef = useRef();
     const lastNameRef = useRef();
@@ -38,8 +38,7 @@ function ShippingForm() {
             zipcode: enteredZipcode,
             phone: enteredPhone
         }
-
-        console.log(shippingDetails);
+        props.onContinueToPayment(shippingDetails);
     }
 
 

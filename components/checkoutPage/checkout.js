@@ -21,6 +21,10 @@ function Checkout() {
 
     }, [cartProduct.length])
 
+    function orderConfirmHandler(shippingDetails) {
+        alert('Service temporarily unavailable');
+    }
+
     if (cartIsEmpty) {
         return (<section className={classes.checkout}>
             <Spinner />
@@ -31,7 +35,7 @@ function Checkout() {
         <section className={classes.checkout}>
             <div className={classes.checkout_left}>
                 <p>Shipping Details</p>
-                <ShippingForm />
+                <ShippingForm onContinueToPayment={orderConfirmHandler} />
             </div>
             <div className={classes.checkout_right}>
                 <OrderDetails />

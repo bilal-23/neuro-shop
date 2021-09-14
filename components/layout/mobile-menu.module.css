@@ -1,0 +1,96 @@
+.nav_hamburger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 101;
+  width: 30px;
+  height: 30px;
+  right: 5%;
+  top: 3%;
+  cursor: pointer;
+  position: fixed;
+}
+.bar {
+  height: 3px;
+  width: 30px;
+  position: relative;
+}
+.nav_hamburger .bar::before,
+.nav_hamburger .bar::after {
+  height: 130%;
+  content: "";
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  position: absolute;
+  right: 0px;
+  transition: 0.3s ease all;
+}
+.nav_hamburger .bar::before {
+  bottom: 8px;
+}
+.nav_hamburger .bar::after {
+  top: 8px;
+}
+.nav_hamburger.active .bar::before {
+  bottom: 0px;
+  background-color: rgb(248, 248, 248);
+  transform: rotate(145deg);
+}
+.nav_hamburger.active .bar::after {
+  top: 0px;
+  background-color: rgb(255, 255, 255);
+  transform: rotate(-145deg);
+}
+.menu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  align-items: center;
+}
+
+.nav_list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.nav_list ul li {
+  color: white;
+  cursor: pointer;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.5s ease all;
+}
+.nav_list ul li:hover {
+  color: teal;
+  transform: translateY(-2px);
+}
+.nav_list ul li:first-child {
+  font-size: 5rem;
+  padding-bottom: 5rem;
+  color: teal;
+  border-bottom: 2px solid white;
+}
+.footer {
+  color: white;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  position: absolute;
+  padding-bottom: 10px;
+  font-size: 2rem;
+  letter-spacing: 2rem;
+  text-align: center;
+}

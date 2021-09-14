@@ -45,7 +45,4 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  .right ul li:not(:nth-child(-n + 1)) {
-    display: none;
-  }
 }
