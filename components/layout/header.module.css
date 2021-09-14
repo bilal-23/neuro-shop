@@ -45,4 +45,12 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  .header ul li {
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    transition: 0.5s ease all;
+  }
 }

@@ -19,7 +19,7 @@ function Checkout() {
             router.replace('/cart')
         }
 
-    }, [cartProduct.length])
+    }, [cartProduct.length, router])
 
     function orderConfirmHandler(shippingDetails) {
         alert('Service temporarily unavailable');
