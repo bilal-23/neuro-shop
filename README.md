@@ -1,6 +1,6 @@
 # Neuro Shop 🛒
 
-E-commerce site clone amde with Next.js. 
+E-commerce site clone made with Next.js. 
 
 ## Features 💡 
 
