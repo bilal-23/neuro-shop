@@ -23,9 +23,19 @@ function ShippingForm(props) {
         const enteredZipcode = zipRef.current.value.trim();
         const enteredPhone = phoneRef.current.value.trim();
 
-        if (!enteredFirstName || !enteredLastName || !enteredAddress || !enteredCity || !enteredCountry || !enteredState || !enteredZipcode || !enteredPhone || enteredZipcode.length !== 6 || enteredPhone.length < 10 || enteredPhone.length > 13) {
+        if (!enteredFirstName || !enteredLastName || !enteredAddress || !enteredCity || !enteredCountry || !enteredState || !enteredZipcode || !enteredPhone) {
             setFormIsValid(false);
             alert('Invalid Inputs, please check again !');
+            return;
+        }
+        if (enteredPhone.length < 10 || enteredPhone.length > 13) {
+            setFormIsValid(false);
+            alert('Invalid Phone Number, Phone Number must be greater than 10 digits and less than 13 digits')
+            return;
+        }
+        if (enteredZipcode.length !== 6) {
+            setFormIsValid(false);
+            alert('Invalid Zip Code');
             return;
         }
         const shippingDetails = {

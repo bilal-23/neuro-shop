@@ -22,7 +22,7 @@ function Checkout() {
     }, [cartProduct.length, router])
 
     function orderConfirmHandler(shippingDetails) {
-        alert('Service temporarily unavailable');
+        alert('Payment service temporarily unavailable');
     }
 
     if (cartIsEmpty) {
