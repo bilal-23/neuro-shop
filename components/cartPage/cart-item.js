@@ -1,8 +1,9 @@
-import { cartActions } from '../../store/cart-slice';
-import { useDispatch } from 'react-redux';
 import Link from 'next/link';
-import classes from './cart-item.module.css';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../../store/cart-slice';
 import SkeletonImage from '../ui/image-skeleton';
+import classes from './cart-item.module.css';
+
 function CartItem(props) {
     const dispatch = useDispatch();
 

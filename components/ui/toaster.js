@@ -1,6 +1,6 @@
-import classes from './toaster.module.css';
-import Alert from '@material-ui/lab/Alert'
 import ReactDOM from 'react-dom';
+import Alert from '@material-ui/lab/Alert'
+import classes from './toaster.module.css';
 
 function AlertToaster(props) {
 

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import classes from './footer-form.module.css';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import classes from './footer-form.module.css';
 
 function FooterForm() {
     const [loading, setIsLoading] = useState(false);

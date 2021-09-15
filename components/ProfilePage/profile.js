@@ -1,6 +1,7 @@
-import classes from './profile.module.css';
 import { signout } from "next-auth/client"
 import { useRouter } from 'next/router';
+import classes from './profile.module.css';
+
 function Profile() {
     const router = useRouter();
 

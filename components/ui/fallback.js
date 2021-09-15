@@ -1,5 +1,6 @@
-import classes from './fallback.module.css';
 import Skeleton from '@material-ui/lab/Skeleton';
+import classes from './fallback.module.css';
+
 function Fallback() {
     return (
         <section className={classes.fallback}>

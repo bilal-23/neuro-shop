@@ -1,6 +1,6 @@
+import { useRef } from 'react';
 import formClasses from './shipping_form.module.css';
 import classes from './discount-code.module.css';
-import { useRef } from 'react';
 
 function DiscountCode(props) {
     const inputRef = useRef();

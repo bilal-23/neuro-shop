@@ -1,8 +1,8 @@
-import { signout, useSession } from 'next-auth/client';
 import { useState } from 'react';
-import classes from './mobile-menu.module.css';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { signout, useSession } from 'next-auth/client';
+import Link from 'next/link';
+import classes from './mobile-menu.module.css';
 
 function MobileMenu() {
     const [session, loading] = useSession();

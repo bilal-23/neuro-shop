@@ -1,10 +1,10 @@
-import classes from './header.module.css';
 import Link from 'next/link';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import Image from 'next/image';
 import { useSession } from 'next-auth/client';
+import Image from 'next/image';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useWindowDimensions from '../../hooks/use-windowDimension';
 import MobileMenu from './mobile-menu';
+import classes from './header.module.css';
 
 function Header() {
     const [session, loading] = useSession();

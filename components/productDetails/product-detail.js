@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import StarIcon from '@material-ui/icons/Star';
-import classes from './product-detail.module.css';
-import CheckIcon from '@material-ui/icons/Check';
-import Button from '../ui/button';
-import SkeletonImage from '../ui/image-skeleton';
 import { useDispatch, } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
+import StarIcon from '@material-ui/icons/Star';
+import CheckIcon from '@material-ui/icons/Check';
+import Button from '../ui/button';
+import classes from './product-detail.module.css';
+import SkeletonImage from '../ui/image-skeleton';
 import AlertToaster from '../ui/toaster';
 
 function ProductDetail(props) {

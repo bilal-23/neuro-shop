@@ -1,5 +1,6 @@
-import classes from './all-products.module.css'
 import ProductsGrid from './products-grid';
+import classes from './all-products.module.css'
+
 function AllProducts(props) {
     return (
         <section className={classes.section}>

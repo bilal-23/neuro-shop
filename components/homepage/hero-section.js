@@ -1,6 +1,6 @@
-import classes from './hero-section.module.css';
-import Button from '../ui/button';
 import Link from 'next/link';
+import Button from '../ui/button';
+import classes from './hero-section.module.css';
 
 function HeroSection(props) {
     const { pos } = props;

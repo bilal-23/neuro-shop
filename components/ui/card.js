@@ -1,6 +1,6 @@
-import classes from './card.module.css'
 import Image from 'next/image';
 import Link from 'next/link';
+import classes from './card.module.css'
 
 function Card(props) {
     const { cardId } = props;

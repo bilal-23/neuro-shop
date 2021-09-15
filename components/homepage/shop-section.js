@@ -1,5 +1,6 @@
 import Card from '../ui/card';
 import classes from './shop-section.module.css'
+
 function ShopSection() {
     return (
         <section className={classes.section}>

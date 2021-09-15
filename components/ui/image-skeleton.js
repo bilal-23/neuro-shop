@@ -1,7 +1,7 @@
-import classes from './image-skeleton.module.css';
-import Skeleton from '@material-ui/lab/Skeleton';
-import Image from 'next/image';
 import { useState } from 'react';
+import Image from 'next/image';
+import Skeleton from '@material-ui/lab/Skeleton';
+import classes from './image-skeleton.module.css';
 
 
 function SkeletonImage(props) {

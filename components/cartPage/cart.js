@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/client';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import CartItem from './cart-item';
 import AlertToaster from '../ui/toaster';
 import ButtonSecondary from '../ui/Button-secondary';

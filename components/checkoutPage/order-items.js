@@ -1,5 +1,5 @@
-import classes from './order-items.module.css';
 import Image from 'next/image';
+import classes from './order-items.module.css';
 
 function OrderItems(props) {
     return (

@@ -1,6 +1,5 @@
-import classes from './zone-section.module.css';
-import Image from 'next/image';
 import SkeletonImage from '../ui/image-skeleton';
+import classes from './zone-section.module.css';
 
 function ZoneSection() {
     return (

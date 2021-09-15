@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import AlertToaster from '../ui/toaster';
-import ButtonSecondary from '../ui/Button-secondary';
 import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router';
-import classes from './auth.module.css';
+import AlertToaster from '../ui/toaster';
+import ButtonSecondary from '../ui/Button-secondary';
 import Spinner from '../ui/spinner';
+import classes from './auth.module.css';
 
 function Auth() {
     const emailRef = useRef();

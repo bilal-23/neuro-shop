@@ -1,8 +1,8 @@
-import classes from './order-details.module.css';
-import { useSelector } from 'react-redux';
-import OrderItems from './order-items';
-import DiscountCode from './discount-code';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import DiscountCode from './discount-code';
+import OrderItems from './order-items';
+import classes from './order-details.module.css';
 
 function OrderDetails() {
     const [discountApplied, setDiscountApplied] = useState(false);

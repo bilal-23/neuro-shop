@@ -1,9 +1,9 @@
-import classes from './footer.module.css';
+import Image from 'next/image';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FooterForm from './footer-form';
-import Image from 'next/image';
+import classes from './footer.module.css';
 
 function Footer() {
     return (

@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import OrderDetails from './order-details';
 import ShippingForm from './shipping_form';
 import Spinner from '../ui/spinner';
-import classes from './checkout.module.css';
 import AlertToaster from '../ui/toaster';
+import classes from './checkout.module.css';
 
 function Checkout() {
     const cartProduct = useSelector(state => state.cart.products);
