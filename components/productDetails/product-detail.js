@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
+import { useSelector } from 'react-redux';
 import StarIcon from '@material-ui/icons/Star';
 import CheckIcon from '@material-ui/icons/Check';
 import Button from '../ui/button';
 import classes from './product-detail.module.css';
 import SkeletonImage from '../ui/image-skeleton';
 import AlertToaster from '../ui/toaster';
+import { useSession } from 'next-auth/client';
 
 function ProductDetail(props) {
     const [showAlert, setShowAlert] = useState(false);
+    const cart = useSelector(state => state.cart);
+    console.log('cart', cart)
+    const [session, loading] = useSession();
     const dispatch = useDispatch();
     const { productId, description, flavor, heading, image1, price, size, star, subheading, name, cartImage } = props.product;
 
@@ -24,9 +29,9 @@ function ProductDetail(props) {
         }
     }, [showAlert]);
 
-
     function addToCartHandler() {
         setShowAlert(true);
+        //save product to cart
         const productPrice = +price;
         const product = {
             name: name,
