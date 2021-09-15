@@ -11,7 +11,7 @@ function MobileMenu() {
     async function logoutHandler() {
         setActive(false);
         const data = await signout({ redirect: false, callbackUrl: "/" })
-        router.replace(data.url);
+        router.replace('/');
     }
     return (
         <nav className={`${classes.nav} ${active && classes['active']}`}>

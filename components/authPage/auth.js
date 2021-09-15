@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import Alert from '@material-ui/lab/Alert';
+import AlertToaster from '../ui/toaster';
 import ButtonSecondary from '../ui/Button-secondary';
 import { signIn } from 'next-auth/client'
 import { useRouter } from 'next/router';
@@ -108,8 +108,8 @@ function Auth() {
 
     return (
         <>
-            {error && <Alert severity="error" className="alert">{error}</Alert>}
-            {success && <Alert severity="success" className="alert">{success}</Alert>}
+            {error && <AlertToaster severity="error" className="alert">{error}</AlertToaster>}
+            {success && <AlertToaster severity="success" className="alert">{success}</AlertToaster>}
             <section className={classes.auth}>
                 {loading && <Spinner />}
                 <div className={classes.auth_heading}>

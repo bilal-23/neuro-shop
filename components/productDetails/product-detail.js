@@ -6,27 +6,27 @@ import Button from '../ui/button';
 import SkeletonImage from '../ui/image-skeleton';
 import { useDispatch, } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
-import Alert from '@material-ui/lab/Alert';
+import AlertToaster from '../ui/toaster';
 
 function ProductDetail(props) {
-    const [showToaster, setShowToaster] = useState(false);
+    const [showAlert, setShowAlert] = useState(false);
     const dispatch = useDispatch();
     const { productId, description, flavor, heading, image1, price, size, star, subheading, name, cartImage } = props.product;
 
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setShowToaster(false);
+            setShowAlert(false);
         }, 500);
 
         return () => {
             clearTimeout(timeout);
         }
-    }, [showToaster]);
+    }, [showAlert]);
 
 
     function addToCartHandler() {
-        setShowToaster(true);
+        setShowAlert(true);
         const productPrice = +price;
         const product = {
             name: name,
@@ -40,11 +40,11 @@ function ProductDetail(props) {
 
     return (
         <>
-            {showToaster && <div className={classes.alertContainer}>
-                <Alert severity="success" color="info" className={classes.alert}>
+            {showAlert &&
+                <AlertToaster severity="success" color="info">
                     Item added to cart
-                </Alert>
-            </div>}
+                </AlertToaster>
+            }
             <section className={`${classes.section} ${classes[productId]}`}>
                 <div className={classes.product_image}>
                     <SkeletonImage height={430} width={430} src={`/images/allproducts/${image1}`} layout="intrinsic" />
