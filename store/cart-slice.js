@@ -18,7 +18,8 @@ const cartSlice = createSlice({
                     image: newitem.image,
                     quantity: 1,
                     id: newitem.id,
-                    totalPrice: newitem.price
+                    totalPrice: newitem.price,
+                    description: newitem.description
                 })
             } else {
                 existingItem.quantity = existingItem.quantity + 1;
@@ -35,11 +36,6 @@ const cartSlice = createSlice({
                 existingItem.quantity = existingItem.quantity - 1;
                 existingItem.totalPrice = existingItem.totalPrice - newitem.price;
             }
-        },
-        setCart(state, action) {
-            const cart = action.payload;
-            state.products = cart.products;
-            state.totalPrice = cart.totalPrice;
         }
     }
 })

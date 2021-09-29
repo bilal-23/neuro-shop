@@ -8,13 +8,11 @@ import Button from '../ui/button';
 import classes from './product-detail.module.css';
 import SkeletonImage from '../ui/image-skeleton';
 import AlertToaster from '../ui/toaster';
-import { useSession } from 'next-auth/client';
 
 function ProductDetail(props) {
     const [showAlert, setShowAlert] = useState(false);
     const cart = useSelector(state => state.cart);
     console.log('cart', cart)
-    const [session, loading] = useSession();
     const dispatch = useDispatch();
     const { productId, description, flavor, heading, image1, price, size, star, subheading, name, cartImage } = props.product;
 
@@ -38,7 +36,8 @@ function ProductDetail(props) {
             price: productPrice,
             image: cartImage,
             quantity: 1,
-            id: productId
+            id: productId,
+            description: description
         }
         dispatch(cartActions.addProduct(product));
     }

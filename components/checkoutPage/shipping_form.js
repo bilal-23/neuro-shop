@@ -16,6 +16,8 @@ function ShippingForm(props) {
     const zipRef = useRef();
     const phoneRef = useRef();
 
+
+    //unmount notification
     useEffect(() => {
         const timeout = setTimeout(() => {
             setShowAlert(false);
@@ -26,6 +28,8 @@ function ShippingForm(props) {
         }
     }, [showAlert]);
 
+
+    //shipping form handler
     function formSubmitHandler(e) {
         e.preventDefault();
         const enteredFirstName = firstNameRef.current.value.trim();

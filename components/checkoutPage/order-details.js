@@ -30,9 +30,9 @@ function OrderDetails() {
             <p>Items in cart</p>
             {order.products?.map(item => <OrderItems key={item.id} productId={item.id} image={item.image} name={item.name} price={item.price} quantity={item.quantity} totalPrice={item.totalPrice} />)}
             <div className={classes.order_total}>
-                <div className={classes.order_discount}>
+                {/* <div className={classes.order_discount}>
                     <DiscountCode onApplyCoupon={couponHandler} discountApplied={discountApplied} removeDiscount={couponHandler} />
-                </div>
+                </div> */}
                 <div className={classes.order_total}>
                     <div>
                         <p>Subtotal</p>
