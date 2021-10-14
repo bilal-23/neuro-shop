@@ -1,7 +1,7 @@
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 export default async function handler(req, res) {
-    const { items, email } = req.body
+    const { items, email, shippingDetails } = req.body
 
     const transformedItems = items.map(item => {
         return {
@@ -27,7 +27,8 @@ export default async function handler(req, res) {
         cancel_url: `${process.env.HOST}/error`,
         metadata: {
             email: email,
-            images: JSON.stringify(items.map(item => item.image))
+            images: JSON.stringify(items.map(item => item.image)),
+            shippingDetails: shippingDetails
         }
     })
 

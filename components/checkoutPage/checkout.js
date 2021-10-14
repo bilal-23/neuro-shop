@@ -46,20 +46,20 @@ function Checkout() {
 
     //Proceed to payment function
     function orderConfirmHandler(shippingDetails) {
-        createCheckoutSession();
+        const shippingAddress = `${shippingDetails.firstname} ${shippingDetails.lastName}, ${shippingDetails.address}, ${shippingDetails.city}, ${shippingDetails.state}, ${shippingDetails.country}, ${shippingDetails.zipcode}, ${shippingDetails.phone}`
+        createCheckoutSession(shippingAddress);
     }
 
-    console.log(cartProduct);
-
     //Stripe Checkout Session Generator
-    async function createCheckoutSession() {
+    async function createCheckoutSession(shippingAddress) {
         const stripe = await stripePromise;
 
 
         //call the backend to create checkout session
         const checkoutSession = await axios.post('/api/create-checkout-session', {
             items: cartProduct,
-            email: session?.user?.email
+            email: session?.user?.email,
+            shippingDetails: shippingAddress
         });
 
         //Redirect user to stripe checkout

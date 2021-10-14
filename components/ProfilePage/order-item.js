@@ -35,7 +35,7 @@ function OrderItem(props) {
                 <p className={classes.order_quantity}>{images.length}</p>
             </div>
             <div className={classes.order_images}>
-                {images.map(img => <img src={img} alt="orders" />)}
+                {images.map((img, i) => <img src={img} alt="orders" key={i} />)}
             </div>
         </div>
     )
