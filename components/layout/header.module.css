@@ -39,7 +39,23 @@
   fill: white !important;
   width: 2rem;
 }
-
+.right_cart {
+  position: relative;
+}
+.right_cartItems {
+  position: absolute;
+  top: -1rem;
+  right: -0.6rem;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+}
 @media only screen and (max-width: 600px) {
   .header {
     padding-left: 1rem;

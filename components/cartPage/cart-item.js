@@ -38,7 +38,7 @@ function CartItem(props) {
                 <Link href={`/products/${props.productId}`}>
                     <a>
                         <div className={classes.item_name}>
-                            <SkeletonImage src={`/images/allproducts/${props.image}`} alt={props.name} width={150} height={150} />
+                            <SkeletonImage src={`${props.image}`} alt={props.name} width={150} height={150} />
                             <p>{props.name}</p>
                         </div>
                     </a>

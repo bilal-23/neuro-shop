@@ -12,7 +12,6 @@ import AlertToaster from '../ui/toaster';
 function ProductDetail(props) {
     const [showAlert, setShowAlert] = useState(false);
     const cart = useSelector(state => state.cart);
-    console.log('cart', cart)
     const dispatch = useDispatch();
     const { productId, description, flavor, heading, image1, price, size, star, subheading, name, cartImage } = props.product;
 
@@ -34,7 +33,7 @@ function ProductDetail(props) {
         const product = {
             name: name,
             price: productPrice,
-            image: cartImage,
+            image: `https://raw.githubusercontent.com/bilal-23/neuro-shop/master/public/images/allproducts/${cartImage}`,
             quantity: 1,
             id: productId,
             description: description
@@ -51,7 +50,7 @@ function ProductDetail(props) {
             }
             <section className={`${classes.section} ${classes[productId]}`}>
                 <div className={classes.product_image}>
-                    <SkeletonImage height={430} width={430} src={`/images/allproducts/${image1}`} layout="intrinsic" />
+                    <SkeletonImage height={430} width={430} src={`https://raw.githubusercontent.com/bilal-23/neuro-shop/master/public/images/allproducts/${image1}`} layout="intrinsic" />
                 </div>
                 <div className={classes.product_detail}>
                     <div className={classes.product_detail_heading}>

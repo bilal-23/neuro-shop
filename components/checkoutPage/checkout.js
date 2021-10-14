@@ -49,9 +49,12 @@ function Checkout() {
         createCheckoutSession();
     }
 
+    console.log(cartProduct);
+
     //Stripe Checkout Session Generator
     async function createCheckoutSession() {
         const stripe = await stripePromise;
+
 
         //call the backend to create checkout session
         const checkoutSession = await axios.post('/api/create-checkout-session', {

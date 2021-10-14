@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { useSession } from 'next-auth/client';
+import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useWindowDimensions from '../../hooks/use-windowDimension';
@@ -9,6 +10,7 @@ import classes from './header.module.css';
 function Header() {
     const [session, loading] = useSession();
     const dimension = useWindowDimensions();
+    const itemsQuantity = useSelector(state => state.cart.totalQuantity)
     return (
         <>
 
@@ -33,8 +35,9 @@ function Header() {
                             <li>Account</li>
                         </a></Link>}
                         <Link href="/cart"><a>
-                            <li>
+                            <li className={classes.right_cart}>
                                 <ShoppingCartIcon style={{ fontSize: 30 }} />
+                                {itemsQuantity > 0 && <span className={classes.right_cartItems}>{itemsQuantity}</span>}
                             </li>
                         </a>
                         </Link>
