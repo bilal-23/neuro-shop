@@ -21,7 +21,7 @@ const fulfillOrder = async (session) => {
 
     //Order Object
     const orderObject = {
-        id: session.id,
+        orderId: session.id,
         email: session.metadata.email,
         amount: session.amount_total / 100,
         amount_shipping: session.total_details.amount_shipping / 100,

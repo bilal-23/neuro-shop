@@ -1,8 +1,9 @@
 import { signout } from "next-auth/client"
 import { useRouter } from 'next/router';
+import OrderItem from "./order-item";
 import classes from './profile.module.css';
 
-function Profile() {
+function Profile({ orders }) {
     const router = useRouter();
 
     async function logoutHandler() {
@@ -19,6 +20,7 @@ function Profile() {
             </div>
             <div className={classes.profile_nav_content}>
                 <h2>Purchase history</h2>
+                {orders.map(order => <OrderItem key={order.orderId} order={order} />)}
             </div>
         </section>
     )
