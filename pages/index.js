@@ -2,9 +2,13 @@ import HeroSection from "../components/homepage/hero-section";
 import ZoneSection from "../components/homepage/zone-section";
 import ShopSection from "../components/homepage/shop-section";
 import { getSession } from 'next-auth/client';
+import Head from 'next/head';
 export default function Home(props) {
   return (
     <>
+      <Head>
+        <title>Neuro</title>
+      </Head>
       <HeroSection heading="Health in your pocket" text="Functional gum and mints to energize, calm and focus you in the moment." btnText="shop" pos="top" />
       <ShopSection />
       <ZoneSection />

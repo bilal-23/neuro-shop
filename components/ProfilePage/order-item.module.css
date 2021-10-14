@@ -47,6 +47,10 @@
   display: flex;
   gap: 2rem;
   padding: 0 2rem;
+  overflow-x: auto;
+}
+.order_images::-webkit-scrollbar {
+  width: 10rem;
 }
 .order_images img {
   width: 15rem;

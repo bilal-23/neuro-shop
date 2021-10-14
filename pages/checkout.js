@@ -1,9 +1,16 @@
 import Checkout from "../components/checkoutPage/checkout";
 import { getSession } from 'next-auth/client';
+import Head from 'next/head';
+
 
 function CheckoutPage() {
     return (
-        <Checkout />
+        <>
+            <Head>
+                <title>Checkout</title>
+            </Head>
+            <Checkout />
+        </>
     )
 }
 export default CheckoutPage;

@@ -3,6 +3,7 @@ import ErrorPage from "../../components/ui/error-page";
 import { connectToDatabase } from '../../util/database';
 import { useRouter } from 'next/router';
 import Fallback from "../../components/ui/fallback";
+import Head from 'next/head';
 
 
 function ProductDetailsPage(props) {
@@ -16,8 +17,12 @@ function ProductDetailsPage(props) {
         return <ErrorPage />
     } else {
         return (
-            <ProductDetail product={product} />
-
+            <>
+                <Head>
+                    <title>{product.name}</title>
+                </Head>
+                <ProductDetail product={product} />
+            </>
         )
     }
 }

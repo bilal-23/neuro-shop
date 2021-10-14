@@ -1,12 +1,18 @@
 import { getSession } from 'next-auth/client';
 import Profile from '../components/ProfilePage/profile';
 import { connectToDatabase } from '../util/database';
+import Head from 'next/head';
 
 function AccountPage(props) {
     const purchaseHistory = JSON.parse(props.orders);
 
     return (
-        <Profile orders={purchaseHistory} />
+        <>
+            <Head>
+                <title>Account</title>
+            </Head>
+            <Profile orders={purchaseHistory} />
+        </>
     )
 }
 export default AccountPage;

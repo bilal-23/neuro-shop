@@ -1,8 +1,14 @@
 import { getSession } from "next-auth/client";
 import Auth from "../../components/authPage/auth";
+import Head from 'next/head';
 
 function SignInPage() {
-    return <Auth />
+    return <>
+        <Head>
+            <title>Auth</title>
+        </Head>
+        <Auth />
+    </>
 }
 export default SignInPage;
 
