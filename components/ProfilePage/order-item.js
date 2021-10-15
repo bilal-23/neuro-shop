@@ -31,7 +31,7 @@ function OrderItem(props) {
                     </p>
                 </div>
 
-                <p className={classes.order_id}>{orderId}</p>
+                <p className={classes.order_id}>Order # {orderId}</p>
                 <p className={classes.order_quantity}>{images.length}</p>
             </div>
             <div className={classes.order_images}>

@@ -34,7 +34,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
-  width: 20rem;
+  width: 50%;
 }
 .order_quantity {
   font-size: 2rem;
