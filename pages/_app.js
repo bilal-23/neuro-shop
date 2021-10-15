@@ -1,8 +1,8 @@
 import Router from "next/router";
 import NProgress from "nprogress";
-import Head from 'next/head';
 import Layout from '../components/layout/layout';
 import '../styles/globals.css';
+import '../styles/nprogress.css';
 import { Provider as ReduxProvider } from 'react-redux';
 import store from '../store/index';
 import { Provider as AuthProvider } from "next-auth/client";
@@ -18,9 +18,6 @@ function MyApp({ Component, pageProps }) {
     <>
       <AuthProvider session={pageProps.session}>
         <ReduxProvider store={store}>
-          <Head>
-            <link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css" />
-          </Head>
           <Layout>
             <Component {...pageProps} />
           </Layout>
