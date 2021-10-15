@@ -19,3 +19,6 @@
 .button[disabled]:hover {
   background-color: rgba(10, 10, 10, 0.8);
 }
+.button:active {
+  transform: scale(1.02);
+}

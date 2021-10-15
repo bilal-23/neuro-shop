@@ -19,6 +19,7 @@ function Checkout() {
     const [errorMessage, setErrorMessage] = useState('');
     const [showAlert, setShowAlert] = useState(false);
     const [cartIsEmpty, setCartIsEmpty] = useState(true);
+    const [showSpinner, setShowSpinner] = useState(false);
     const router = useRouter();
 
     //unmount notification 
@@ -46,6 +47,7 @@ function Checkout() {
 
     //Proceed to payment function
     function orderConfirmHandler(shippingDetails) {
+        setShowSpinner(true);
         const shippingAddress = `${shippingDetails.firstname} ${shippingDetails.lastName}, ${shippingDetails.address}, ${shippingDetails.city}, ${shippingDetails.state}, ${shippingDetails.country}, ${shippingDetails.zipcode}, ${shippingDetails.phone}`
         createCheckoutSession(shippingAddress);
     }
@@ -87,6 +89,7 @@ function Checkout() {
             </AlertToaster>
         }
             <section className={classes.checkout}>
+                {showSpinner && <Spinner />}
                 <div className={classes.checkout_left}>
                     <p>Shipping Details</p>
                     <ShippingForm onContinueToPayment={orderConfirmHandler} />
