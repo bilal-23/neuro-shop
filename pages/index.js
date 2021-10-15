@@ -3,7 +3,10 @@ import ZoneSection from "../components/homepage/zone-section";
 import ShopSection from "../components/homepage/shop-section";
 import { getSession } from 'next-auth/client';
 import Head from 'next/head';
+import { useEffect } from "react";
+
 export default function Home(props) {
+
   return (
     <>
       <Head>

@@ -7,8 +7,7 @@ function Profile({ orders }) {
     const router = useRouter();
 
     async function logoutHandler() {
-        const data = await signout({ redirect: false, callbackUrl: "/" })
-        router.replace(data.url);
+        signout({ redirect: true, callbackUrl: "/" })
     }
     return (
         <section className={classes.profile}>

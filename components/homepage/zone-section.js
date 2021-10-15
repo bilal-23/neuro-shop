@@ -1,11 +1,11 @@
-import SkeletonImage from '../ui/image-skeleton';
+import Image from 'next/image'
 import classes from './zone-section.module.css';
 
 function ZoneSection() {
     return (
         <section className={classes.section}>
             <div className={classes.zone_image}>
-                <SkeletonImage src="/assets/zone.gif" width={400} height={400} alt="Zone" />
+                <Image src="/assets/zone.gif" width={400} height={400} alt="Zone" />
             </div>
             <div className={classes.zone_content}>
                 <h3>In the zone. Every day.</h3>
