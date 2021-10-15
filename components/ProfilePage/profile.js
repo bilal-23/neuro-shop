@@ -1,13 +1,16 @@
-import { signout } from "next-auth/client"
-import { useRouter } from 'next/router';
+import { signout } from "next-auth/client";
 import OrderItem from "./order-item";
+import { useDispatch } from "react-redux";
+import { cartActions } from '../../store/cart-slice';
 import classes from './profile.module.css';
 
 function Profile({ orders }) {
-    const router = useRouter();
+    const dispatch = useDispatch();
 
     async function logoutHandler() {
-        signout({ redirect: true, callbackUrl: "/" })
+        dispatch(cartActions.resetCart());
+        signout({ redirect: false, callbackUrl: "/" });
+        location.replace('/');
     }
     return (
         <section className={classes.profile}>
@@ -19,7 +22,7 @@ function Profile({ orders }) {
             </div>
             <div className={classes.profile_nav_content}>
                 <h2>Purchase history</h2>
-                {orders.map(order => <OrderItem key={order.orderId} order={order} />)}
+                {orders.map((order, index) => <OrderItem key={order.orderId + index} order={order} />)}
             </div>
         </section>
     )
