@@ -4,7 +4,7 @@ import NumberFormat from "react-number-format";
 function OrderItem(props) {
     const { amount, orderId, images } = props.order;
     const date = new Date(props.order.timestamp);
-    const transformedDate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    const transformedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
 
 
     return (
