@@ -104,6 +104,11 @@ function Auth() {
         }
 
     }
+    async function demoUserSignIn(e) {
+        setLoading(true);
+        e.preventDefault();
+        logIn("test@test.com", "123456789");
+    }
 
     return (
         <>
@@ -124,6 +129,9 @@ function Auth() {
                     </div>
                     <div className={classes.form_input_group}>
                         <ButtonSecondary type="submit" tall={true}>{isLogin ? 'Sign In' : 'Create Account'}</ButtonSecondary>
+                    </div>
+                    <div className={classes.form_input_group}>
+                        <ButtonSecondary onClick={demoUserSignIn} type="button" tall={true}>{'Demo User'}</ButtonSecondary>
                     </div>
                 </form>
                 <div className={classes.auth_change}>

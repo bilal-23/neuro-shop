@@ -44,7 +44,7 @@ const fulfillOrder = async (session) => {
     return;
 }
 
-export default handler = async (req, res) => {
+async function handler(req, res) {
     if (req.method === 'POST') {
         const requestBuffer = await buffer(req)
         const payload = requestBuffer.toString()
@@ -96,8 +96,8 @@ export default handler = async (req, res) => {
 //         }
 //     }
 // }
-// export default handler;
 
+export default handler;
 export const config = {
     api: {
         bodyParser: false,
