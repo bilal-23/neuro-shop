@@ -33,6 +33,12 @@ const fulfillOrder = async (session) => {
     //Upload order data to mongoDB 
     try {
         const db = client.db();
+        const itemExist = await db.collection('orders').findOne({ orderId: session.id });
+
+        if (itemExist) {
+            res.status(201).json({ message: 'Item Already Added', error: null });
+            return;
+        }
         const result = await db.collection('orders').insertOne({ ...orderObject });
         client.close();
         res.status(201).json({ message: 'Order Successfully Added', error: null });
