@@ -9,7 +9,7 @@ export default async function handler(req, res) {
             quantity: item.quantity,
             price_data: {
                 currency: 'inr',
-                unit_amount: 10 * 100,
+                unit_amount: item.price * 100,
                 product_data: {
                     name: item.name,
                     images: [item.image]
